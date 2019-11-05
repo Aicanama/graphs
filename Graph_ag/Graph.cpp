@@ -1,51 +1,79 @@
 #include "Graph.h"
+#include "Vertex.h"
+
 #include <vector>
-#include <ctime>
+#include <time.h>
 #include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
-Graph::Graph( int nb_vertex )
+Graph::Graph( int _nb_vertex )
 {
-    int i;
+    this->nb_vertex = _nb_vertex;
 
-    for (i=0;i<nb_vertex; ++i)
+    for (int i=0;i<nb_vertex; ++i)
     {
-        Vertex v(i);
+        Vertex* v = new Vertex(i);
         ListVertex.push_back(v);
 
     }
+    srand(time(NULL));
 
     int id=0;
-    for (i=0;i<nb_vertex; ++i)
-    {
-        for (int j=0;j<nb_vertex; ++j)
-        {
-
+    for (int i=0;i<nb_vertex; ++i)    {
+        for (int j=0;j<nb_vertex; ++j)        {
+            if (i==j)continue;
             int r=rand()%2;
-            if(r==1)
+            if(r==1) /// il existe un lien
             {
-                 Edge e(id,ListVertex[i],ListVertex[j]);
+                 Edge* e = new Edge(id,ListVertex[i],ListVertex[j]);
                  ListEdge.push_back(e);
+                ++id;
             }
-            else
-            {
-                Edge e(id,ListVertex[j],ListVertex[i]);
-                ListEdge.push_back(e);
-            }
-             ++id;
         }
     }
 
-
-
 }
 
+Graph::Graph(){
+    /// lecture fichier
+}
+Graph::~Graph(){
+    ///
 
-Graph& Graph::operator=(const Graph& rhs)
-{
-    if (this == &rhs) return *this; // handle self assignment
-    //assignment operator
-    return *this;
+    for (int i =0;i<nb_vertex;i++)
+        delete[] Adj[i];
+    delete[] Adj;
 }
 
+void Graph::genererMatrice(){
+    Adj = new int*[nb_vertex];
+    for (int i =0;i<nb_vertex;i++){
+        Adj[i] = new int[nb_vertex];
+        for (int j =0;j<nb_vertex;j++)
+            Adj[i][j]=0;
+    }
+    int n = ListEdge.size();
+    for (int k =0; k<ListEdge.size();k++){
+        int i = ListEdge[k]->source->id;
+        int j = ListEdge[k]->destination->id;
+        Adj[i][j]=1;
+    }
+}
+
+void Graph::afficher(){
+
+    cout<<" \t";
+    for (int i =0;i<nb_vertex;i++)
+        cout<<i<<"\t";
+    cout<<endl;
+
+    for (int i =0;i<nb_vertex;i++){
+        cout<<i<<"\t";
+        for (int j =0;j<nb_vertex;j++)
+            cout<<Adj[i][j]<<"\t";
+        cout<<endl;
+    }
+    cout<<endl;
+}

@@ -1,9 +1,12 @@
 #include "Edge.h"
 #include "Vertex.h"
 
-Edge& Edge::operator=(const Edge& rhs)
+
+using namespace std;
+
+Edge::Edge(int _id, Vertex* src, Vertex* dest)
 {
-    if (this == &rhs) return *this; // handle self assignment
-    //assignment operator
-    return *this;
+    this->id = _id;
+    this->source = src;
+    this->destination = dest;
 }

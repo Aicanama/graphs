@@ -1,22 +1,20 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#include "Vertex.h"
+#include "/home/users/imelouno/Bureau/AG44/graphs/Graph_ag/Vertex.h"
 
 class Edge
 {
-    private:
-        int id;
-        Vertex source;
-        Vertex destination;
 
     public:
+        int id;
+        Vertex* source;
+        Vertex* destination;
 
-        Edge(int i, Vertex v1, Vertex v2):id(i),source(v1),destination(v2){};
-        virtual ~Edge();
-        Edge(const Edge& other):id(other.id),source(other.source), destination(other.destination){};
-        Edge& operator=(const Edge& other);
 
+        Edge(int, Vertex*, Vertex*);
+        ~Edge();
+    private:
 };
 
 #endif // EDGE_H

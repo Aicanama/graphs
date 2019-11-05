@@ -8,8 +8,9 @@ using namespace std;
 
 int main()
 {
-    Graph G(10);
-    G.afficher();
+    Graph* G= new Graph(10);
+    G->genererMatrice();
+    G->afficher();
     return 0;
 }
 

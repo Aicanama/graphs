@@ -10,18 +10,24 @@
 class Graph
 {
     public:
-        Graph(int nb_vertex);
-        Graph(const Graph& other);
-        virtual ~Graph();
-        Graph& operator=(const Graph& other);
 
+        /// Construtor
+        Graph(int nb_vertex);
+        Graph();
+        virtual ~Graph();
+
+        /// fonctions
         void afficher();
+        void genererMatrice();
 
 
     private:
         int nb_vertex;
-        std::vector<Vertex> ListVertex;  //V
-        std::vector<Edge> ListEdge;      //E
+        std::vector<Vertex*> ListVertex;  //V
+        std::vector<Edge*> ListEdge;      //E
+
+
+        int** Adj;
 };
 
 #endif // GRAPH_H

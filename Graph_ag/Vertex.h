@@ -1,27 +1,18 @@
 #ifndef VERTEX_H
 #define VERTEX_H
 
-#include "Edge.h"
-
 
 class Vertex
 {
     public:
-        Vertex():id(),x(),y(),color(){};
-        Vertex(int idi):id(idi),x(),y(),color(){};
+        Vertex(int);
         virtual ~Vertex();
-        Vertex(const Vertex& other):id(other.id),x(other.x),y(other.y),color(other.color){};
-        Vertex& operator=(const Vertex& other);
 
-    friend class Edge;
-
-    private:
         int id;
         int x,y;
         char color;
+    private:
 };
-
-Vertex V;
 
 #endif // VERTEX_H
 
