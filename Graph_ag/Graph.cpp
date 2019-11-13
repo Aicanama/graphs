@@ -6,6 +6,12 @@
 #include <cstdlib>
 #include <iostream>
 
+#include <string>
+#include <sstream>
+#include <fstream>
+
+#include "file2graph.h"
+
 using namespace std;
 
 Graph::Graph( int _nb_vertex )
@@ -38,7 +44,39 @@ Graph::Graph( int _nb_vertex )
 
 Graph::Graph(){
     /// lecture fichier
+
+    ifstream File("file.txt");
+
+    if(File)
+    {
+        ///first line for nb vertices
+        File.seekg(0,ios::beg);
+        string nb_vertices;
+        File >> nb_vertices;
+            ///conversion string to int and transfert to Graph
+            istringstream(nb_vertices) >> nb_vertex;
+            cout << nb_vertex<<endl;
+
+        ///type of the graph: o for directed graph, n for undirected graph
+        File.seekg(0,ios::cur);
+        string types;
+        File >> types;
+        cout << types <<endl;
+
+        ///type of representation: m adjacency matrix, l adjacency list.
+        File.seekg(0,ios::cur);
+        File >> types;
+        cout << types <<endl;
+
+
+    }
+    else
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
+    }
+
 }
+
 Graph::~Graph(){
     ///
 

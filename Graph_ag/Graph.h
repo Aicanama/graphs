@@ -6,6 +6,11 @@
 #include "Vertex.h"
 #include "Edge.h"
 
+#include <string>
+#include <sstream>
+#include <fstream>
+
+#include "file2graph.h"
 
 class Graph
 {

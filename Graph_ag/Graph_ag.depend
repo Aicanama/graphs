@@ -27,3 +27,43 @@
 	"Vertex.h"
 	"Graph.h"
 
+1573653401 source:/home/users/imelouno/Bureau/graphs/Graph_ag/Edge.cpp
+	"Edge.h"
+	"Vertex.h"
+
+1573653401 /home/users/imelouno/Bureau/graphs/Graph_ag/Edge.h
+	"/home/users/imelouno/Bureau/AG44/graphs/Graph_ag/Vertex.h"
+
+1572972748 /home/users/imelouno/Bureau/AG44/graphs/Graph_ag/Vertex.h
+
+1573653401 /home/users/imelouno/Bureau/graphs/Graph_ag/Vertex.h
+
+1573655195 source:/home/users/imelouno/Bureau/graphs/Graph_ag/main.cpp
+	<iostream>
+	"Edge.h"
+	"Vertex.h"
+	"Graph.h"
+
+1573654645 /home/users/imelouno/Bureau/graphs/Graph_ag/Graph.h
+	<vector>
+	"time.h"
+	"Vertex.h"
+	"Edge.h"
+	<string>
+	<sstream>
+	<fstream>
+
+1573653401 source:/home/users/imelouno/Bureau/graphs/Graph_ag/Vertex.cpp
+	"Vertex.h"
+
+1573656129 source:/home/users/imelouno/Bureau/graphs/Graph_ag/Graph.cpp
+	"Graph.h"
+	"Vertex.h"
+	<vector>
+	<time.h>
+	<cstdlib>
+	<iostream>
+	<string>
+	<sstream>
+	<fstream>
+
