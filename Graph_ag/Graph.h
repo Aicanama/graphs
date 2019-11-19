@@ -10,7 +10,8 @@
 #include <sstream>
 #include <fstream>
 
-#include "file2graph.h"
+#include "graph_o_matrix.h"
+
 
 class Graph
 {

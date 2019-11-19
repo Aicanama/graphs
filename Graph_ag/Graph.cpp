@@ -10,7 +10,6 @@
 #include <sstream>
 #include <fstream>
 
-#include "file2graph.h"
 
 using namespace std;
 
@@ -54,21 +53,57 @@ Graph::Graph(){
         string nb_vertices;
         File >> nb_vertices;
             ///conversion string to int and transfert to Graph
-            istringstream(nb_vertices) >> nb_vertex;
+            istringstream(nb_vertices) >> this->nb_vertex;
             cout << nb_vertex<<endl;
 
         ///type of the graph: o for directed graph, n for undirected graph
         File.seekg(0,ios::cur);
         string types;
-        File >> types;
-        cout << types <<endl;
+        File >> types[0];
+        cout << types[0] <<endl;
 
         ///type of representation: m adjacency matrix, l adjacency list.
         File.seekg(0,ios::cur);
-        File >> types;
-        cout << types <<endl;
+        File >> types[1];
+        cout << types[1]<<endl;
 
 
+    for(int i=0;i<nb_vertex; ++i)
+    {
+        Vertex* v = new Vertex(i);
+        ListVertex.push_back(v);
+
+    }
+    srand(time(NULL));
+
+
+    int id=0;
+
+    for (int i=0;i<nb_vertex; ++i)    {
+            for (int j=0;j<nb_vertex; ++j) {
+
+            string compteur; ///string
+            File.seekg(0,ios::cur);
+            File >> compteur;
+
+            int k=0;
+            while(k<2)  //
+            {
+                if (compteur[k]==' ') k=0;
+                else
+                {
+                        if(compteur[k]=='1')
+                        {
+                             Edge* e = new Edge(id,ListVertex[i],ListVertex[j]);
+                             ListEdge.push_back(e);
+                            ++id;
+                        }
+                    }
+                    k++;
+                }
+
+            }
+        }
     }
     else
     {
@@ -78,7 +113,7 @@ Graph::Graph(){
 }
 
 Graph::~Graph(){
-    ///
+    ///delete adjency matrix
 
     for (int i =0;i<nb_vertex;i++)
         delete[] Adj[i];

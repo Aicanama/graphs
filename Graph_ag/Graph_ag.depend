@@ -67,3 +67,57 @@
 	<sstream>
 	<fstream>
 
+1574176822 source:/home/users/imelouno/Bureau/graphs/graphs/Graph_ag/Edge.cpp
+	"Edge.h"
+	"Vertex.h"
+
+1574176822 /home/users/imelouno/Bureau/graphs/graphs/Graph_ag/Edge.h
+	"/home/users/imelouno/Bureau/AG44/graphs/Graph_ag/Vertex.h"
+
+1574176823 /home/users/imelouno/Bureau/graphs/graphs/Graph_ag/Vertex.h
+
+1574186645 source:/home/users/imelouno/Bureau/graphs/graphs/Graph_ag/Graph.cpp
+	"Graph.h"
+	"Vertex.h"
+	<vector>
+	<time.h>
+	<cstdlib>
+	<iostream>
+	<string>
+	<sstream>
+	<fstream>
+
+1574177931 /home/users/imelouno/Bureau/graphs/graphs/Graph_ag/Graph.h
+	<vector>
+	"time.h"
+	"Vertex.h"
+	"Edge.h"
+	<string>
+	<sstream>
+	<fstream>
+	"graph_o_matrix.h"
+
+1574176823 /home/users/imelouno/Bureau/graphs/graphs/Graph_ag/file2graph.h
+
+1574186825 source:/home/users/imelouno/Bureau/graphs/graphs/Graph_ag/main.cpp
+	<iostream>
+	"Edge.h"
+	"Vertex.h"
+	"Graph.h"
+
+1574176823 source:/home/users/imelouno/Bureau/graphs/graphs/Graph_ag/Vertex.cpp
+	"Vertex.h"
+
+1574178936 /home/users/imelouno/Bureau/graphs/graphs/Graph_ag/graph_o_matrix.h
+
+1574179535 source:/home/users/imelouno/Bureau/graphs/graphs/Graph_ag/graph_o_matrix.cpp
+	<iostream>
+	<vector>
+	"time.h"
+	"Vertex.h"
+	"Edge.h"
+	<string>
+	<sstream>
+	<fstream>
+	"graph_o_matrix.h"
+
