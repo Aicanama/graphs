@@ -11,7 +11,6 @@ class Edge
         Vertex* source;
         Vertex* destination;
 
-
         Edge(int, Vertex*, Vertex*);
         ~Edge();
     private:

@@ -10,8 +10,6 @@
 #include <sstream>
 #include <fstream>
 
-#include "graph_o_matrix.h"
-
 
 class Graph
 {
@@ -20,14 +18,15 @@ class Graph
         /// Construtor
         Graph(int nb_vertex);
         Graph();
-        ~Graph();
+        virtual ~Graph();
 
         /// fonctions
         void afficher();
         void genererMatrice();
 
         ///fichier lecture
-        int file2graph(char* fich );
+        int file2graph(std::ifstream& FICH);
+        int graph_o_matrix(std::ifstream& FICH);
 
 
     private:
