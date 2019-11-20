@@ -121,3 +121,47 @@
 	<fstream>
 	"graph_o_matrix.h"
 
+1574198229 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.cpp
+	"Edge.h"
+	"Vertex.h"
+
+1574198289 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.h
+	"Vertex.h"
+
+1574198229 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.h
+
+1574209157 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.cpp
+	"Graph.h"
+	"Vertex.h"
+	<vector>
+	<time.h>
+	<cstdlib>
+	<iostream>
+	<string>
+	<sstream>
+	<fstream>
+
+1574202898 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
+	<vector>
+	"time.h"
+	"Vertex.h"
+	"Edge.h"
+	<string>
+	<sstream>
+	<fstream>
+	"graph_o_matrix.h"
+
+1574198229 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph_o_matrix.h
+
+1574201688 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<fstream>
+	"Edge.h"
+	"Vertex.h"
+	"Graph.h"
+
+1574198229 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.cpp
+	"Vertex.h"
+

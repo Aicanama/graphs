@@ -20,11 +20,14 @@ class Graph
         /// Construtor
         Graph(int nb_vertex);
         Graph();
-        virtual ~Graph();
+        ~Graph();
 
         /// fonctions
         void afficher();
         void genererMatrice();
+
+        ///fichier lecture
+        int file2graph(char* fich );
 
 
     private:

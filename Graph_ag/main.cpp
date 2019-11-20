@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <fstream>
 
 #include "Edge.h"
 #include "Vertex.h"
