@@ -1,14 +1,18 @@
 4
-o
+n
 m
+1 1 1 0
+0 1 0 1
+0 0 1 1
+0 0 0 1
 
 MATRIX
 Directed
 Nb_vertices * Nb_vertices 
-1,1,1,0;	
-0,1,0,1;	
-0,0,1,1;	
-0,0,0,1;
+1 1 1 0
+0 1 0 1
+0 0 1 1
+0 0 0 1
 
 Undirected 
 A matrix triangularine lower of Nb_vertices	

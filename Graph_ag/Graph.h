@@ -10,7 +10,6 @@
 #include <sstream>
 #include <fstream>
 
-#include "file2graph.h"
 
 class Graph
 {
@@ -24,6 +23,10 @@ class Graph
         /// fonctions
         void afficher();
         void genererMatrice();
+
+        ///fichier lecture
+        int file2graph(std::ifstream& FICH);
+        int graph_o_matrix(std::ifstream& FICH);
 
 
     private:

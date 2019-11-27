@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <fstream>
 
 #include "Edge.h"
 #include "Vertex.h"
@@ -13,6 +16,12 @@ int main()
     G->afficher();
     cout << "test file"<< endl;
     Graph* B = new Graph();
+    B->genererMatrice();
+    B->afficher();
+
     return 0;
 }
+
+using namespace std;
+
 

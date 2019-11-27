@@ -1,7 +1,7 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#include "/home/users/imelouno/Bureau/AG44/graphs/Graph_ag/Vertex.h"
+#include "Vertex.h"
 
 class Edge
 {
@@ -10,7 +10,6 @@ class Edge
         int id;
         Vertex* source;
         Vertex* destination;
-
 
         Edge(int, Vertex*, Vertex*);
         ~Edge();
