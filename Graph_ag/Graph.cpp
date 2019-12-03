@@ -32,7 +32,7 @@ Graph::Graph( int _nb_vertex )
             int r=rand()%2;
             if(r==1) /// il existe un lien
             {
-                 Edge* e = new Edge(id,ListVertex[i],ListVertex[j]);
+                 Edge* e = new Edge(id,1,ListVertex[i],ListVertex[j]);
                  ListEdge.push_back(e);
                 ++id;
             }
@@ -50,9 +50,10 @@ void Graph::genererMatrice(){
     }
     int n = ListEdge.size();
     for (int k =0; k<n ;k++){
+        int c = ListEdge[k]->cost;
         int i = ListEdge[k]->source->id;
         int j = ListEdge[k]->destination->id;
-        Adj[i][j]=1;
+        Adj[i][j]=c;
     }
 }
 
@@ -80,6 +81,19 @@ Graph::Graph(){
 
 }
 
+///fonction qui détecte la fin d'une ligne dans un fichier
+bool endLine (ifstream& fichier){
+    char carac;
+
+    fichier.get(carac);
+
+    if ((carac == '\n') || (carac == '\r')) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 int Graph::file2graph( ifstream& FICH )
 {
@@ -117,6 +131,10 @@ int Graph::file2graph( ifstream& FICH )
                         if (graph_o_matrix(FICH)!=1) exit (EXIT_FAILURE);
                         else return (graph_o_matrix(FICH));
                         }
+                     else if ((types[0] =='o' || types[0] =='n' )&& types[1]=='l') {
+                        if (graph_list(FICH) != 1) exit (EXIT_FAILURE);
+                        else return (graph_list(FICH));
+                    }
 
 
                 }}
@@ -147,20 +165,21 @@ int Graph::graph_o_matrix(ifstream& FICH){
             string compteur;   ///string contenant le caractère et l'espace d'après
             FICH.seekg(0,ios::cur);
             FICH >> compteur;
-
+            cout << "compt :" << compteur <<endl;
             int k=0;
-             while(k<2)  //if k =1 on a pris l'espace donc on a bien l'élément i
+             while(k<2)  //k =0 value |k= 1 espace
             {
                 if (compteur[k]==' ') k=0; //remise a zero lors de l'espace
                 else
                 {
                         if(compteur[k]=='1')
                         {
-                             Edge* e = new Edge(id, ListVertex[i],ListVertex[j]);
+                            int c = compteur[k]-48;
+                             Edge* e = new Edge(id, c, ListVertex[i],ListVertex[j]);
                              ListEdge.push_back(e);
                             ++id;
                         }
-                    }
+                }
                     k++;
                 }
 
@@ -169,6 +188,92 @@ int Graph::graph_o_matrix(ifstream& FICH){
     }catch(exception const& e) {return 0;}
     throw 1;
     }catch(int nb){return nb;}
+}
+
+///Crée un graph à partir d'une liste d'adjacence
+int Graph::graph_list(ifstream& File){
+
+    try{//return 1 if it construct the graph
+
+        for(int i = 0; i < nb_vertex; ++i){
+        ///Création de la liste de vertices
+            Vertex* v = new Vertex(i);
+            ListVertex.push_back(v);
+
+                int compteur = 0;
+                int j, c;
+                ///on se place à la bonne ligne (on commence a 0)
+                lineX(File,3+i);
+
+                string line;
+                getline(File, line);
+                    int p = line.size();
+                    cout << "line : " <<line << " taille ligne : " << p <<endl;
+
+                    int posEspace =0;
+                    while( !endLine(File))
+                     {
+                         posEspace = line.find(" ");
+                         if (compteur%2==0)
+                         {
+                            string VALUE = line.substr(compteur,compteur+posEspace); //value avant l'espace
+                            cout << "VALUE : "<< VALUE <<endl;
+                            istringstream iss (VALUE);
+                            j = stringToInt(VALUE);
+
+                        }
+                        else
+                        {
+                            string VALUE = line.substr(compteur,compteur+posEspace);
+                            cout << "VALUE : "<< VALUE <<endl;
+                            istringstream iss (VALUE);
+
+                             c = stringToInt(VALUE);  //2eme val = le cout
+                                ///On crée le nouveau edge
+                                if (c > 0) {
+                                    Edge* e = new Edge(i,c,ListVertex[i],ListVertex[j]);
+                                    ListEdge.push_back(e);
+                                }
+
+                            compteur = compteur+posEspace+1; //on se met après l'espace
+                        }
+
+
+
+                     }
+
+
+
+
+                //cout << "Le vertex a " << (compteur-1)/2 << " voisin(s)" << endl;
+
+                }
+                return 1;
+
+    }
+    catch(exception const& e) {return 0;}
+}
+
+///Fonction qui place le curseur à la ligne x
+void Graph::lineX(ifstream& File, int x) {
+
+        ///on remet le curseur au début du fichier
+        File.seekg(0, ios::beg);
+
+        ///on le déplace au début de la ligne x
+        for (int i = 0; i < x; ++i) {
+            string line;
+            getline(File,line);
+        }
+
+}
+
+///fonction qui transforme un string en int
+int Graph::stringToInt(string ss){
+    int value;
+
+    value = atoi(ss.c_str());
+    return value;
 }
 
 Graph::~Graph(){

@@ -27,6 +27,9 @@ class Graph
         ///fichier lecture
         int file2graph(std::ifstream& FICH);
         int graph_o_matrix(std::ifstream& FICH);
+        int graph_list(std::ifstream&);
+        void lineX(std::ifstream&, int);
+        int stringToInt(std::string);
 
 
     private:

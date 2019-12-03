@@ -8,10 +8,11 @@ class Edge
 
     public:
         int id;
+        int cost;
         Vertex* source;
         Vertex* destination;
 
-        Edge(int, Vertex*, Vertex*);
+        Edge(int, int, Vertex*, Vertex*);
         ~Edge();
     private:
 };
