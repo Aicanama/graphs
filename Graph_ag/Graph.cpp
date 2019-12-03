@@ -107,7 +107,6 @@ int Graph::file2graph( ifstream& FICH )
             FICH >> nb_vertices;
                 ///conversion string to int and transfert to Graph
                 istringstream(nb_vertices) >> nb_vertex;
-
             ///type of the graph: o for directed graph, n for undirected graph
             FICH.seekg(0,ios::cur);
             string types;
@@ -152,7 +151,8 @@ int Graph::file2graph( ifstream& FICH )
 int Graph::graph_o_matrix(ifstream& FICH){
     try { //si marche renvoie 1
     try { //exception par mémoire ou allocation
-    for(int i=0;i<nb_vertex; ++i)
+    int i;
+    for(i=0;i<nb_vertex; ++i)
     {
         Vertex* v = new Vertex(i);
         ListVertex.push_back(v);
@@ -160,30 +160,42 @@ int Graph::graph_o_matrix(ifstream& FICH){
     }
 
     int id=0;
-    for (int i=0;i<nb_vertex; ++i)    {
-            for (int j=0;j<nb_vertex; ++j) {
-            string compteur;   ///string contenant le caractère et l'espace d'après
-            FICH.seekg(0,ios::cur);
-            FICH >> compteur;
-            cout << "compt :" << compteur <<endl;
-            int k=0;
-             while(k<2)  //k =0 value |k= 1 espace
-            {
-                if (compteur[k]==' ') k=0; //remise a zero lors de l'espace
-                else
-                {
-                        if(compteur[k]=='1')
-                        {
-                            int c = compteur[k]-48;
-                             Edge* e = new Edge(id, c, ListVertex[i],ListVertex[j]);
-                             ListEdge.push_back(e);
-                            ++id;
-                        }
-                }
-                    k++;
-                }
 
-            }}
+    for (int i=0; i<nb_vertex; ++i)    {
+
+            lineX(FICH,i+3); //mis en place au niveau voulu
+
+            int compteur = 0;
+            int j = 0;
+
+            string line; //string contenant la ligne de la matrix
+            getline(FICH, line);
+            cout << "\n\n line : "<< line <<endl;
+
+            int posEspace =0;
+
+            while (j<nb_vertex)
+            {
+
+                posEspace = line.find(" ",posEspace+1);
+                string VALUE = line.substr(compteur,posEspace-compteur);
+                cout << "VALUE : " << VALUE
+                    << "\n compteur : " << compteur << " posEspace : " << posEspace <<endl;
+                istringstream iss (VALUE);
+                int c = stringToInt(VALUE);
+
+                Edge* e = new Edge(id, c, ListVertex[i],ListVertex[j]);
+                ListEdge.push_back(e);
+                ++id;
+                ++j;
+
+                compteur = compteur+(posEspace-compteur); //on se met après l'espace
+
+            }
+
+
+
+            }
 
     }catch(exception const& e) {return 0;}
     throw 1;
@@ -196,6 +208,7 @@ int Graph::graph_list(ifstream& File){
     try{//return 1 if it construct the graph
 
         for(int i = 0; i < nb_vertex; ++i){
+                cout << "\n";
         ///Création de la liste de vertices
             Vertex* v = new Vertex(i);
             ListVertex.push_back(v);
@@ -213,10 +226,11 @@ int Graph::graph_list(ifstream& File){
                     int posEspace =0;
                     while( !endLine(File))
                      {
-                         posEspace = line.find(" ");
+                         posEspace = line.find(" ",posEspace+1);
+                         cout << "posEspace : "<< posEspace  << " compte :" << compteur<<endl;
                          if (compteur%2==0)
                          {
-                            string VALUE = line.substr(compteur,compteur+posEspace); //value avant l'espace
+                            string VALUE = line.substr(compteur,posEspace-compteur); //value avant l'espace
                             cout << "VALUE : "<< VALUE <<endl;
                             istringstream iss (VALUE);
                             j = stringToInt(VALUE);
@@ -224,7 +238,7 @@ int Graph::graph_list(ifstream& File){
                         }
                         else
                         {
-                            string VALUE = line.substr(compteur,compteur+posEspace);
+                            string VALUE = line.substr(compteur,posEspace-compteur);
                             cout << "VALUE : "<< VALUE <<endl;
                             istringstream iss (VALUE);
 
@@ -235,10 +249,8 @@ int Graph::graph_list(ifstream& File){
                                     ListEdge.push_back(e);
                                 }
 
-                            compteur = compteur+posEspace+1; //on se met après l'espace
                         }
-
-
+                         compteur = compteur+(posEspace-compteur); //on se met après l'espace
 
                      }
 
