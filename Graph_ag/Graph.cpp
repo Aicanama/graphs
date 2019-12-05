@@ -11,7 +11,6 @@
 #include <fstream>
 #include <list>
 
-
 using namespace std;
 
 Graph::Graph( int _nb_vertex )
@@ -80,6 +79,16 @@ Graph::Graph(){
     cout << "res de file2graph : " << this->file2graph(FICH) <<endl;
 
 }
+
+
+Graph::~Graph(){
+    ///delete adjency matrix
+
+    for (int i =0;i<nb_vertex;i++)
+        delete[] Adj[i];
+    delete[] Adj;
+}
+
 
 ///fonction qui détecte la fin d'une ligne dans un fichier
 bool endLine (ifstream& fichier){
@@ -314,9 +323,7 @@ void Graph::BFS(int ID) {
 
     //on visite le 1er
     visited(ID);
-     /*for (int i = 0; i < nb_vertex; ++i) {
-        cout << "ListVer[ID] ici ID = 0 le seul qui change est O " << ListVertex[i]->visit <<endl;
-     }*/
+
         //on l'ajoute à la queue
         q.push_back(ID);
 
@@ -345,14 +352,30 @@ void Graph::BFS(int ID) {
     }
 }
 
+///Fonction qui visite le vertex
+void Graph::dfs_util(int ID) {
 
+    visited(ID);
+    cout << "Visited " << ID << " ";
 
-
-Graph::~Graph(){
-    ///delete adjency matrix
-
-    for (int i =0;i<nb_vertex;i++)
-        delete[] Adj[i];
-    delete[] Adj;
+    int currVertex;
+    for(int i =0; i< nb_vertex; ++i)
+        {
+            if(Adj[ID][i]!=0){
+                currVertex = i;
+                if(!isVisited(currVertex)) {
+                    dfs_util(currVertex);
+                }
+            }
+    }
 }
 
+///Fonction qui répète la fonction dfs_util
+void Graph::DFS(int ID) {
+
+    //on note tous les vertex comme non visités
+    setAllUnvisited();
+    //recursive call
+    dfs_util(ID);
+
+}

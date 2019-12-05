@@ -32,13 +32,17 @@ class Graph
         void lineX(std::ifstream&, int);
         int stringToInt(std::string);
 
-        ///DFS - BFS
+        ///Visit
         bool isVisited(int);
         void setAllUnvisited();
         void visited(int);
 
         //affichage de BFS
-        void BFS(int id);
+        void BFS(int);
+
+        //affichage de DFS
+        void dfs_util(int);
+        void DFS(int);
 
 
 

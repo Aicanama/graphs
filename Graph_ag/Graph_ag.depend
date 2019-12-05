@@ -133,7 +133,7 @@
 
 1575555792 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.h
 
-1575561352 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.cpp
+1575564850 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.cpp
 	"Graph.h"
 	"Vertex.h"
 	<vector>
@@ -145,7 +145,7 @@
 	<fstream>
 	<list>
 
-1575558562 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
+1575562103 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
 	<vector>
 	"time.h"
 	"Vertex.h"
@@ -157,7 +157,7 @@
 
 1574198229 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph_o_matrix.h
 
-1575556139 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
+1575562521 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -165,7 +165,6 @@
 	"Edge.h"
 	"Vertex.h"
 	"Graph.h"
-	"BFS.h"
 
 1575555787 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.cpp
 	"Vertex.h"

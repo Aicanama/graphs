@@ -6,7 +6,6 @@
 #include "Edge.h"
 #include "Vertex.h"
 #include "Graph.h"
-#include "BFS.h"
 
 using namespace std;
 
@@ -19,10 +18,11 @@ int main()
     Graph* B = new Graph();
     B->genererMatrice();
     B->afficher();
-    cout << "\n\n test BFS"<<endl;
 
+    cout << "\n test BFS file start at 0"<<endl;
     B->BFS(0);
-
+    cout << "\n test DFS file start at 1"<<endl;
+    B->DFS(1);
     return 0;
 }
 
