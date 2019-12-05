@@ -124,16 +124,16 @@
 	<fstream>
 	"graph_o_matrix.h"
 
-1575368738 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.cpp
+1575549252 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.cpp
 	"Edge.h"
 	"Vertex.h"
 
-1575368832 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.h
+1575549252 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.h
 	"Vertex.h"
 
-1575366402 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.h
+1575555792 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.h
 
-1575394550 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.cpp
+1575561352 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.cpp
 	"Graph.h"
 	"Vertex.h"
 	<vector>
@@ -143,8 +143,9 @@
 	<string>
 	<sstream>
 	<fstream>
+	<list>
 
-1575367966 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
+1575558562 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
 	<vector>
 	"time.h"
 	"Vertex.h"
@@ -152,10 +153,11 @@
 	<string>
 	<sstream>
 	<fstream>
+	<list>
 
 1574198229 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph_o_matrix.h
 
-1575367580 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
+1575556139 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -163,9 +165,27 @@
 	"Edge.h"
 	"Vertex.h"
 	"Graph.h"
+	"BFS.h"
 
-1575366402 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.cpp
+1575555787 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.cpp
 	"Vertex.h"
 
 1574255003 /home/users/imelouno/Bureau/graphs/Graph_ag/graph_o_matrix.h
+
+1575551614 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.cpp
+	"BFS.h"
+	"Graph.h"
+	<vector>
+	<queue>
+	<cstdlib>
+	<iostream>
+	<queue>
+
+1575551491 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.h
+	"Graph.h"
+	<vector>
+	<queue>
+	<cstdlib>
+	<iostream>
+	<queue>
 

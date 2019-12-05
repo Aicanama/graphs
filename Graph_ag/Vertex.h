@@ -5,13 +5,15 @@
 class Vertex
 {
     public:
-        Vertex(int);
-        virtual ~Vertex();
-
+        //members
         int id;
         int x,y;
         char color;
-    private:
+        int visit;
+
+        //attribute
+        Vertex(int);
+        virtual ~Vertex();
 };
 
 #endif // VERTEX_H

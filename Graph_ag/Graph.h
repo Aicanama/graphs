@@ -9,6 +9,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <list>
 
 
 class Graph
@@ -31,12 +32,20 @@ class Graph
         void lineX(std::ifstream&, int);
         int stringToInt(std::string);
 
+        ///DFS - BFS
+        bool isVisited(int);
+        void setAllUnvisited();
+        void visited(int);
 
-    private:
+        //affichage de BFS
+        void BFS(int id);
+
+
+
+    public:
         int nb_vertex;
         std::vector<Vertex*> ListVertex;  //V
         std::vector<Edge*> ListEdge;      //E
-
 
         int** Adj;
 };

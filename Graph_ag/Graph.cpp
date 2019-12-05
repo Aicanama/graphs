@@ -9,6 +9,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <list>
 
 
 using namespace std;
@@ -21,7 +22,6 @@ Graph::Graph( int _nb_vertex )
     {
         Vertex* v = new Vertex(i);
         ListVertex.push_back(v);
-
     }
     srand(time(NULL));
 
@@ -77,7 +77,7 @@ void Graph::afficher(){
 Graph::Graph(){
     /// lecture fichier puis construction graph
     ifstream FICH("file.txt");
-    cout << "res de file2graph : " << file2graph(FICH) <<endl;
+    cout << "res de file2graph : " << this->file2graph(FICH) <<endl;
 
 }
 
@@ -170,7 +170,6 @@ int Graph::graph_o_matrix(ifstream& FICH){
 
             string line; //string contenant la ligne de la matrix
             getline(FICH, line);
-            cout << "\n\n line : "<< line <<endl;
 
             int posEspace =0;
 
@@ -179,8 +178,6 @@ int Graph::graph_o_matrix(ifstream& FICH){
 
                 posEspace = line.find(" ",posEspace+1);
                 string VALUE = line.substr(compteur,posEspace-compteur);
-                cout << "VALUE : " << VALUE
-                    << "\n compteur : " << compteur << " posEspace : " << posEspace <<endl;
                 istringstream iss (VALUE);
                 int c = stringToInt(VALUE);
 
@@ -288,6 +285,69 @@ int Graph::stringToInt(string ss){
     return value;
 }
 
+
+///Fonction qui met tous les vertices à non visité
+void Graph::setAllUnvisited() {
+    for (int i = 0; i < nb_vertex; ++i) {
+        ListVertex[i]->visit = 0;
+    }
+}
+
+///Fonction qui indique si le vertex id est visité
+bool Graph::isVisited(int ID) {
+    return ListVertex[ID]->visit;
+}
+
+
+///Fonction qui note le vertex id comme visité
+void Graph::visited(int ID) {
+    ListVertex[ID]->visit = 1;
+}
+
+//id : vertex de départ
+void Graph::BFS(int ID) {
+
+    list<int> q;
+
+    //on note tous les vertex comme non visités
+    setAllUnvisited();
+
+    //on visite le 1er
+    visited(ID);
+     /*for (int i = 0; i < nb_vertex; ++i) {
+        cout << "ListVer[ID] ici ID = 0 le seul qui change est O " << ListVertex[i]->visit <<endl;
+     }*/
+        //on l'ajoute à la queue
+        q.push_back(ID);
+
+    //on continue de visiter les autres vertices
+    while (!q.empty()) {
+        ID = q.front();
+        cout << "Visited " << ID << " ";
+        q.pop_front();
+
+        //en fonction du nombre d'edge !!!!!! REVOIR COMMENT OBTENIR CA
+         int currVertex;
+
+        for(int i = 0; i< nb_vertex; ++i)
+        {   int k =0;
+
+            while( Adj[ID][i]!=0 && k<1){
+                k++;
+                currVertex = i;
+                    if (!isVisited(currVertex)) {
+                        visited(currVertex);
+                        q.push_back(currVertex);
+                    }
+
+            }
+        }
+    }
+}
+
+
+
+
 Graph::~Graph(){
     ///delete adjency matrix
 
@@ -295,3 +355,4 @@ Graph::~Graph(){
         delete[] Adj[i];
     delete[] Adj;
 }
+
