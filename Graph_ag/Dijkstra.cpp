@@ -56,9 +56,9 @@ void Dijkstra(Graph* G,int ID){
 
     }
 
-    printf("\n\n Dijkstra : \nVertex \t\t Distance \tPredecessor\n");
+    printf("\n\n Dijkstra : \nVertex \t\t Distance from src  \tPredecessor\n");
     for (int i = 0; i < G->nb_vertex; i++){
-        cout<<i<< " \t\t " << dist[i] << "\t\t "<<pred[i]  <<endl;
+        cout<<i<< " \t\t " << dist[i] << "\t\t\t "<<pred[i]  <<endl;
     }
 
 }

@@ -9,6 +9,7 @@
 #include "Dijkstra.h"
 #include "BFS.h"
 #include "DFS.h"
+#include "MinHeap.h"
 
 using namespace std;
 
@@ -25,10 +26,22 @@ int main()
     BFS(B,0);
     DFS(B,1);
 
-    Dijkstra(B,0);
+    Dijkstra(B,0);//si affiche gd chiffre = infini
 
+    MinHeap h(B);
+    h.AddElement(1);
+    h.AddElement(3);
+    h.AddElement(6);
+    h.AddElement(5);
+    h.AddElement(9);
 
+    h.AddElement(4);
 
+cout<<"\n" ;
+for (int i =1;i<=h.nb_element;i++)
+    {
+        cout<<h.table[i]<<" | ";
+    }
     return 0;
 }
 

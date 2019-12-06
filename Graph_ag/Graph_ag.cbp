@@ -44,6 +44,8 @@
 		<Unit filename="Edge.h" />
 		<Unit filename="Graph.cpp" />
 		<Unit filename="Graph.h" />
+		<Unit filename="MinHeap.cpp" />
+		<Unit filename="MinHeap.h" />
 		<Unit filename="Vertex.cpp" />
 		<Unit filename="Vertex.h" />
 		<Unit filename="main.cpp" />

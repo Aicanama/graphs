@@ -7,14 +7,15 @@ class Edge
 {
 
     public:
+        //members
         int id;
         int cost;
         Vertex* source;
         Vertex* destination;
 
+        //constructor
         Edge(int, int, Vertex*, Vertex*);
         ~Edge();
-    private:
 };
 
 #endif // EDGE_H

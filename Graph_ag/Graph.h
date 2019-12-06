@@ -14,6 +14,14 @@
 
 class Graph
 {
+
+    public:
+        int nb_vertex;
+        std::vector<Vertex*> ListVertex;  //V
+        std::vector<Edge*> ListEdge;      //E
+
+        int** Adj;
+
     public:
 
         /// Construtor
@@ -36,14 +44,6 @@ class Graph
         bool isVisited(int);
         void setAllUnvisited();
         void visited(int);
-
-
-    public:
-        int nb_vertex;
-        std::vector<Vertex*> ListVertex;  //V
-        std::vector<Edge*> ListEdge;      //E
-
-        int** Adj;
 };
 
 #endif // GRAPH_H

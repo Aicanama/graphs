@@ -128,7 +128,7 @@
 	"Edge.h"
 	"Vertex.h"
 
-1575549252 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.h
+1575646071 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.h
 	"Vertex.h"
 
 1575566455 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.h
@@ -145,7 +145,7 @@
 	<fstream>
 	<list>
 
-1575643309 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
+1575646044 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
 	<vector>
 	"time.h"
 	"Vertex.h"
@@ -157,7 +157,7 @@
 
 1574198229 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph_o_matrix.h
 
-1575643462 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
+1575650549 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -168,13 +168,14 @@
 	"Dijkstra.h"
 	"BFS.h"
 	"DFS.h"
+	"MinHeap.h"
 
 1575555787 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.cpp
 	"Vertex.h"
 
 1574255003 /home/users/imelouno/Bureau/graphs/Graph_ag/graph_o_matrix.h
 
-1575643116 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.cpp
+1575643600 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.cpp
 	"BFS.h"
 	"Graph.h"
 	<iostream>
@@ -182,7 +183,7 @@
 1575642908 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.h
 	"Graph.h"
 
-1575643223 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.cpp
+1575645875 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.cpp
 	"Dijkstra.h"
 	"Graph.h"
 	<iostream>
@@ -193,8 +194,16 @@
 1575643355 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dfs.h
 	"Graph.h"
 
-1575643542 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dfs.cpp
+1575643600 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dfs.cpp
 	"DFS.h"
 	"Graph.h"
 	<iostream>
+
+1575650630 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\minheap.cpp
+	"MinHeap.h"
+	"Graph.h"
+	<iostream>
+
+1575650630 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\minheap.h
+	"Graph.h"
 
