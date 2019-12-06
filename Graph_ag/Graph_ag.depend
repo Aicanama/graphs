@@ -131,9 +131,9 @@
 1575549252 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\edge.h
 	"Vertex.h"
 
-1575555792 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.h
+1575566455 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.h
 
-1575564850 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.cpp
+1575643370 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.cpp
 	"Graph.h"
 	"Vertex.h"
 	<vector>
@@ -145,7 +145,7 @@
 	<fstream>
 	<list>
 
-1575562103 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
+1575643309 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph.h
 	<vector>
 	"time.h"
 	"Vertex.h"
@@ -157,7 +157,7 @@
 
 1574198229 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph_o_matrix.h
 
-1575562521 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
+1575643462 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -165,26 +165,36 @@
 	"Edge.h"
 	"Vertex.h"
 	"Graph.h"
+	"Dijkstra.h"
+	"BFS.h"
+	"DFS.h"
 
 1575555787 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.cpp
 	"Vertex.h"
 
 1574255003 /home/users/imelouno/Bureau/graphs/Graph_ag/graph_o_matrix.h
 
-1575551614 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.cpp
+1575643116 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.cpp
 	"BFS.h"
 	"Graph.h"
-	<vector>
-	<queue>
-	<cstdlib>
 	<iostream>
-	<queue>
 
-1575551491 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.h
+1575642908 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.h
 	"Graph.h"
-	<vector>
-	<queue>
-	<cstdlib>
+
+1575643223 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.cpp
+	"Dijkstra.h"
+	"Graph.h"
 	<iostream>
-	<queue>
+
+1575636991 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.h
+	"Graph.h"
+
+1575643355 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dfs.h
+	"Graph.h"
+
+1575643542 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dfs.cpp
+	"DFS.h"
+	"Graph.h"
+	<iostream>
 

@@ -7,9 +7,9 @@ class Vertex
     public:
         //members
         int id;
-        int x,y;
         char color;
         int visit;
+        int cost;
 
         //attribute
         Vertex(int);

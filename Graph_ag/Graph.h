@@ -37,14 +37,6 @@ class Graph
         void setAllUnvisited();
         void visited(int);
 
-        //affichage de BFS
-        void BFS(int);
-
-        //affichage de DFS
-        void dfs_util(int);
-        void DFS(int);
-
-
 
     public:
         int nb_vertex;

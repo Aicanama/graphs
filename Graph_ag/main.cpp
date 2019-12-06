@@ -6,23 +6,29 @@
 #include "Edge.h"
 #include "Vertex.h"
 #include "Graph.h"
+#include "Dijkstra.h"
+#include "BFS.h"
+#include "DFS.h"
 
 using namespace std;
 
 int main()
 {
-    Graph* G = new Graph(10);
+    /*Graph* G = new Graph(3);
     G->genererMatrice();
-    G->afficher();
+    G->afficher();*/
     cout << "test file"<< endl;
     Graph* B = new Graph();
     B->genererMatrice();
     B->afficher();
 
-    cout << "\n test BFS file start at 0"<<endl;
-    B->BFS(0);
-    cout << "\n test DFS file start at 1"<<endl;
-    B->DFS(1);
+    BFS(B,0);
+    DFS(B,1);
+
+    Dijkstra(B,0);
+
+
+
     return 0;
 }
 

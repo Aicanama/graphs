@@ -34,6 +34,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="BFS.cpp" />
+		<Unit filename="BFS.h" />
+		<Unit filename="DFS.cpp" />
+		<Unit filename="DFS.h" />
+		<Unit filename="Dijkstra.cpp" />
+		<Unit filename="Dijkstra.h" />
 		<Unit filename="Edge.cpp" />
 		<Unit filename="Edge.h" />
 		<Unit filename="Graph.cpp" />
