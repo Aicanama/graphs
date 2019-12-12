@@ -10,6 +10,7 @@
 #include "BFS.h"
 #include "DFS.h"
 #include "MinHeap.h"
+#include "Floyd_Warshall.h"
 
 using namespace std;
 
@@ -23,25 +24,24 @@ int main()
     B->genererMatrice();
     B->afficher();
 
-    BFS(B,0);
+    vector<int> v;
+    v = BFS(B,0);
+
     DFS(B,1);
 
-    Dijkstra(B,0);//si affiche gd chiffre = infini
+    Dijkstra(B,0);//si affiche INF = infini
 
-    MinHeap h(B);
-    h.AddElement(1);
-    h.AddElement(3);
-    h.AddElement(6);
-    h.AddElement(5);
-    h.AddElement(9);
+    /**MinHeap h(B); //construct add(i)--> avoir voisin
 
-    h.AddElement(4);
 
-cout<<"\n" ;
+cout<<"\n MinHeap  " ;
 for (int i =1;i<=h.nb_element;i++)
     {
         cout<<h.table[i]<<" | ";
-    }
+    }*/
+
+    Floyd_Warshall(B);
+
     return 0;
 }
 

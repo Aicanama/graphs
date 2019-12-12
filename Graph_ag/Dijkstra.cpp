@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//pick the vertex <ith the minimum vertex
+//pick the vertex ith = the minimum vertex
 int minDistance(Graph* G,int dist[]) {
     // Initialize min value
     int mini=INT_MAX, min_index;
@@ -56,9 +56,12 @@ void Dijkstra(Graph* G,int ID){
 
     }
 
-    printf("\n\n Dijkstra : \nVertex \t\t Distance from src  \tPredecessor\n");
+    cout<<"\n\n Dijkstra : \nVertex \t\t Distance from src  \tPredecessor\n";
     for (int i = 0; i < G->nb_vertex; i++){
-        cout<<i<< " \t\t " << dist[i] << "\t\t\t "<<pred[i]  <<endl;
+             if (pred[i] == INT_MAX)
+                 cout<<i<< " \t\t " << dist[i] << "\t\t\t INF"<<endl;
+            else
+            cout<<i<< " \t\t " << dist[i] << "\t\t\t "<<pred[i]  <<endl;
     }
 
 }

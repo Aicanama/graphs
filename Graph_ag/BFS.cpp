@@ -6,7 +6,10 @@ using namespace std;
 
 
 //id : vertex de départ
-void BFS(Graph* G, int ID) {
+vector<int> BFS(Graph* G, int ID) {
+
+                //rendu pour ordre voisin
+                vector<int> v;
 
     cout << "\n\n BFS starts at "<< ID <<endl;
     list<int> q;
@@ -24,6 +27,9 @@ void BFS(Graph* G, int ID) {
     while (!q.empty()) {
         ID = q.front();
         cout << " " << ID << " ";
+                    //on insère le vecteur visite dans la liste
+                    v.push_back(ID);
+
         q.pop_front();
 
         //en fonction du nombre d'edge !!!!!! REVOIR COMMENT OBTENIR CA
@@ -43,4 +49,5 @@ void BFS(Graph* G, int ID) {
             }
         }
     }
+    return v;
 }

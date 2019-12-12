@@ -1,5 +1,6 @@
 #include "MinHeap.h"
 #include "Graph.h"
+#include "BFS.h"
 
 #include<iostream>
 
@@ -8,15 +9,32 @@ using namespace std;
 ///-------Constructor--------------
 MinHeap::MinHeap(Graph* G){
     nb_element = 0;
-    capacity = G->nb_vertex+5;
+    capacity = G->nb_vertex;
     table = new int[capacity];
-///how do we create the heap from matrix, liste ??
+    (*this) = createMinHeap(G);
 }
 
 MinHeap::~MinHeap(){
     delete [] table;
 }
 
+MinHeap& MinHeap::createMinHeap(Graph* G)
+{
+
+    vector<int> v = BFS(G,0); //ordre des vertex
+    G->setAllUnvisited();
+    int n= G->nb_vertex;
+
+    for(int k=0;k<n;k++){
+        if(G->isVisited(v.at(k))){
+            G->visited(v[k]);
+            AddElement(v[k]);
+        }
+    }
+    return *this;
+
+
+}
 
 ///-------BT-----------------------------------
 

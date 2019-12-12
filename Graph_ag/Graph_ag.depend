@@ -157,7 +157,7 @@
 
 1574198229 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\graph_o_matrix.h
 
-1575650549 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
+1576164453 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -169,26 +169,28 @@
 	"BFS.h"
 	"DFS.h"
 	"MinHeap.h"
+	"Floyd_Warshall.h"
 
 1575555787 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\vertex.cpp
 	"Vertex.h"
 
 1574255003 /home/users/imelouno/Bureau/graphs/Graph_ag/graph_o_matrix.h
 
-1575643600 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.cpp
+1576161150 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.cpp
 	"BFS.h"
 	"Graph.h"
 	<iostream>
 
-1575642908 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.h
+1576160996 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\bfs.h
 	"Graph.h"
+	"vector"
 
-1575645875 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.cpp
+1576162973 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.cpp
 	"Dijkstra.h"
 	"Graph.h"
 	<iostream>
 
-1575636991 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.h
+1576160421 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dijkstra.h
 	"Graph.h"
 
 1575643355 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\dfs.h
@@ -199,11 +201,20 @@
 	"Graph.h"
 	<iostream>
 
-1575650630 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\minheap.cpp
+1576162297 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\minheap.cpp
 	"MinHeap.h"
 	"Graph.h"
+	"BFS.h"
 	<iostream>
 
-1575650630 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\minheap.h
+1576160919 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\minheap.h
+	"Graph.h"
+	"BFS.h"
+
+1576167753 source:c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\floyd_warshall.cpp
+	"Floyd_Warshall.h"
+	<iostream>
+
+1576162844 c:\users\inesm\documents\utbm\ag44\graphs\graph_ag\floyd_warshall.h
 	"Graph.h"
 

@@ -2,12 +2,13 @@
 #define MINHEAP_H
 
 #include "Graph.h"
+#include "BFS.h"
 
 class MinHeap
 {
      public:
          //member
-        int *table; // pointer to array of elements in heap (vertex and dist)
+        int *table; // pointer to array of elements in heap vertex  (dist = value, vertex = i)
         int capacity; // maximum possible size of min heap
         int nb_element; // Current number of elements in min heap
 
@@ -15,6 +16,8 @@ class MinHeap
         //constructors
         MinHeap(Graph*);
         virtual ~MinHeap();
+
+        MinHeap& createMinHeap(Graph*);
 
           ///-----Binary tree
         int parent(int);

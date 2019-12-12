@@ -42,6 +42,8 @@
 		<Unit filename="Dijkstra.h" />
 		<Unit filename="Edge.cpp" />
 		<Unit filename="Edge.h" />
+		<Unit filename="Floyd_Warshall.cpp" />
+		<Unit filename="Floyd_Warshall.h" />
 		<Unit filename="Graph.cpp" />
 		<Unit filename="Graph.h" />
 		<Unit filename="MinHeap.cpp" />

@@ -2,7 +2,8 @@
 #define BFS_H
 
 #include "Graph.h"
+#include "vector"
 
-void BFS(Graph*, int);
+std::vector<int> BFS(Graph*, int);
 
 #endif // BFS_H
