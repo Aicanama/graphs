@@ -28,7 +28,7 @@ MinHeap& MinHeap::createMinHeap(Graph* G)
     for(int k=0;k<n;k++){
         if(G->isVisited(v.at(k))){
             G->visited(v[k]);
-            AddElement(v[k]);
+            AddElement(v[k]); //AddElement(dist de v -> attribut de vertex + voir version td du prof avec set)
         }
     }
     return *this;
@@ -111,7 +111,7 @@ void MinHeap::AddElement(int k)
     {
        Exchange(&table[i], &table[parent(i)]);
 
-       //on remonte le tableau pour vérifier que tjr min est le parent
+       //on remonte le tableau pour vÃ©rifier que tjr min est le parent
        i = parent(i);
     }
 }
