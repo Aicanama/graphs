@@ -18,7 +18,7 @@ MinHeap::~MinHeap(){
     delete [] table;
 }
 
-MinHeap& MinHeap::createMinHeap(Graph* G)
+MinHeap& MinHeap::createMinHeap(Graph* G)//en fait minheap possède 2 argument (src,dist)
 {
 
     vector<int> v = BFS(G,0); //ordre des vertex
