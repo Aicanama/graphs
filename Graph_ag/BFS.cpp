@@ -6,7 +6,7 @@ using namespace std;
 
 
 //id : vertex de départ
-void BFS(Graph* G, int ID) {
+vector<int>  BFS(Graph* G, int ID) {
 
                 //rendu pour ordre voisin
                 vector<int> v;
@@ -38,7 +38,7 @@ void BFS(Graph* G, int ID) {
         for(int i = 0; i< G->nb_vertex; ++i)
         {   int k =0;
 
-            while( G->Adj[ID][i]!=0 && k<1){
+            while( G->ListVertex[ID]->distance[i]!=0 && k<1){
                 k++;
                 currVertex = i;
                     if (!G->isVisited(currVertex)) {
@@ -49,4 +49,5 @@ void BFS(Graph* G, int ID) {
             }
         }
     }
+        return v;
 }

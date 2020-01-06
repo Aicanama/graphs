@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include "Vertex.h"
 #include "Floyd_Warshall.h"
+#include "BFS.h"
 
 #include <vector>
 #include <time.h>
@@ -239,66 +240,92 @@ int Graph::graph_o_matrix(ifstream& FICH){
     }catch(int nb){return nb;}
 }
 
+
+///Fonction qui trie ordre croissant
+void Graph::sortEdge() {
+    int length = nb_edge;
+
+    for (int i = 0; i < length-1; ++i) {
+        for (int j = 0; j < length-1-i; ++j) {
+            if ((ListEdge[j]->cost) > (ListEdge[j+1]->cost)) {
+                Edge* p = ListEdge[j+1];
+                ListEdge[j+1] = ListEdge[j];
+                ListEdge[j] = p;
+            }
+        }
+    }
+}
+
+
+///Fonction qui vérifie qu'un vertex est bien dans la liste
+int Graph::verifV(int ID, Vertex*& v){
+    for(int i=0; i<nb_vertex; ++i) {
+        if (ListVertex[i]->id == ID) {
+            v = ListVertex[i];
+            return 1;
+        }
+    }
+    return 0;
+}
+
+
+
 ///Crée un graph à partir d'une liste d'adjacence
 int Graph::graph_list(ifstream& File){
 
-    try{//return 1 if it construct the graph
-
+    try{///return 1 if it construct the graph
         for(int i = 0; i < nb_vertex; ++i){
-                cout << "\n";
-        ///Création de la liste de vertices
+            ///Création de la liste de vertices
             Vertex* v = new Vertex(i);
             ListVertex.push_back(v);
+        }
 
-                int compteur = 0;
-                int j, c;
-                ///on se place à la bonne ligne (on commence a 0)
-                lineX(File,3+i);
+        ///variables pour la suite
+        int compteur = 0, counter = 0;
+        int j = 0, c = 0, id = 0;
 
-                string line;
-                getline(File, line);
-                    int p = line.size();
-                    cout << "line : " <<line << " taille ligne : " << p <<endl;
+        for (int i = 0; i < nb_vertex; ++i) {
+            ///on se place à la bonne ligne (on commence a 0)
+            lineX(File,3+i);
 
-                    int posEspace =0;
-                    while( !endLine(File))
-                     {
-                         posEspace = line.find(" ",posEspace+1);
-                         cout << "posEspace : "<< posEspace  << " compte :" << compteur<<endl;
-                         if (compteur%2==0)
-                         {
-                            string VALUE = line.substr(compteur,posEspace-compteur); //value avant l'espace
-                            cout << "VALUE : "<< VALUE <<endl;
-                            istringstream iss (VALUE);
-                            j = stringToInt(VALUE);
+            string line;
+            getline(File, line);
+            int taille = line.size();
+            cout << endl << "taille de la ligne : " << taille << endl << endl;
 
-                        }
-                        else
-                        {
-                            string VALUE = line.substr(compteur,posEspace-compteur);
-                            cout << "VALUE : "<< VALUE <<endl;
-                            istringstream iss (VALUE);
+            ///on se replace au début de la ligne
+            File.seekg(0,ios::beg);
+            lineX(File,3+i);
 
-                             c = stringToInt(VALUE);  //2eme val = le cout
-                                ///On crée le nouveau edge
-                                if (c > 0) {
-                                    Edge* e = new Edge(i,c,ListVertex[i],ListVertex[j]);
-                                    ListEdge.push_back(e);
-                                }
+            do {
+                string morceau;
+                File >> morceau;
+                cout << "morceau : " << morceau << endl;
 
-                        }
-                         compteur = compteur+(posEspace-compteur); //on se met après l'espace
+                int p = morceau.size();
 
-                     }
-
-
-
-
-                //cout << "Le vertex a " << (compteur-1)/2 << " voisin(s)" << endl;
-
+                if(counter%2 == 0) {
+                    j = stringToInt(morceau);
                 }
-                return 1;
+                else {
+                    c = stringToInt(morceau);
+                    ///On crée le nouveau edge
+                    Edge* e = new Edge(id, c, ListVertex[i],ListVertex[j]);
+                    ListEdge.push_back(e);
+                }
 
+                compteur = compteur + p + 1;
+                cout << "compteur : " << compteur << endl << endl;
+                counter++;
+                id++;
+            }
+            while(compteur <= taille);
+
+            compteur = 0;
+            cout << "On passe a la ligne suivante!" << endl << endl;
+            //cout << "Le vertex a " << (compteur-1)/2 << " voisin(s)" << endl;
+        }
+        return 1;
     }
     catch(exception const& e) {return 0;}
 }
@@ -343,3 +370,22 @@ bool Graph::isVisited(int ID) {
 void Graph::visited(int ID) {
     ListVertex[ID]->visit = 1;
 }
+
+
+///Fonction qui traverse le graph et compte le nb de vertices visités
+int Graph::pathes_prefixe(Graph* G){
+    vector<int> v;
+    v = BFS(G,0);
+
+    int nbVisited = v.size();
+    return nbVisited;
+}
+
+
+///Fonction qui vérifie la "relatedness" du graph
+bool Graph::graph_connexe(Graph* G){
+    int value = pathes_prefixe(G);
+    if(G->nb_vertex == value) return 1;
+    else return 0;
+}
+

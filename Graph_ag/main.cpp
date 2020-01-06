@@ -43,9 +43,10 @@ int main()
         cout<<h.table[i]<<" | ";
     }*/
 
-    //TopologicalSort(B);
+    TopologicalSort(B);
 
     //Strongly_Related(B);
+
     return 0;
 }
 

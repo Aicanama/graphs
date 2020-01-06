@@ -16,12 +16,12 @@ class Graph
 {
 
     public:
+        int nb_edge;
         int nb_vertex;
         std::vector<Vertex*> ListVertex;  //V
         std::vector<Edge*> ListEdge;      //E
 
         int** Adj;
-        int** VertexVoisin;
 
     public:
 
@@ -32,9 +32,12 @@ class Graph
 
         /// fonctions
         void afficher();
-        void afficherVertexVoisin();
         void genererMatrice();
         void genererDistVertex();
+
+        void sortEdge();
+        int verifV(int, Vertex*&);
+
 
         ///fichier lecture
         int file2graph(std::ifstream& FICH);
@@ -47,6 +50,10 @@ class Graph
         bool isVisited(int);
         void setAllUnvisited();
         void visited(int);
+
+        ///Relatedness
+        int pathes_prefixe(Graph*);
+        bool graph_connexe(Graph*);
 };
 
 #endif // GRAPH_H

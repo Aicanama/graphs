@@ -39,7 +39,7 @@ void Floyd_Warshall(Graph* G){
         }
      }
 
-cout << "\n Floyd-Warshall for shortest paths between any couple of vertices: \n";
+cout << "\n Floyd-Warshall for shortest paths between any couple of vertices: (used for neighbour in Graph) \n";
     for (int i =0;i<G->nb_vertex;i++){
         for (int j =0;j<G->nb_vertex;j++){
 

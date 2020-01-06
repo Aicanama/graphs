@@ -14,7 +14,7 @@ void dfs_util(Graph* G, int ID) {
     int currVertex;
     for(int i =0; i< G->nb_vertex; ++i)
         {
-            if(G->Adj[ID][i]!=0){
+            if(G->ListVertex[ID]->distance[i]!=0){
                 currVertex = i;
                 if(!G->isVisited(currVertex)) {
                     dfs_util(G,currVertex);

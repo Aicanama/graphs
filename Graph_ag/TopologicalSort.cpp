@@ -11,13 +11,16 @@ void TopologicalSortUtil(int ID, Graph* G, stack<int>& Stack) {
     G->visited(ID);
 
     //recur for all the vertices adjacent to this vertex
-    for(int i=0; i< 5; ++i){ ///Revoir liste Predecessor
-        if(G->Adj[ID+1][i]!=0){
-            TopologicalSortUtil(i, G, Stack);
+    for(int i=0; i<G->nb_vertex; ++i){
+            if(G->Adj[ID][i]!=0){
+                if(!G->isVisited(i)) TopologicalSortUtil(i, G, Stack);
+            }
+
         }
+        Stack.push(ID);
     }
-    Stack.push(ID);
-}
+
+
 
 void TopologicalSort(Graph* G){
 
@@ -33,6 +36,7 @@ void TopologicalSort(Graph* G){
     }
 
     ///Print contents of stack
+    cout << "TopologicalSort : "<<endl;
     while (Stack.empty() == false) {
         cout << Stack.top() << " ";
         Stack.pop();
