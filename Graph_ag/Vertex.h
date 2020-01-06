@@ -8,14 +8,14 @@ class Vertex
         //members
         int id;
         int visit;
-        //int *distance; // distance[i] will hold the cost of the vertex with all the other vertex
+        int *distance; // distance[i] will hold the cost of the vertex with all the other vertex
 
         //attribute
         Vertex(int);
         virtual ~Vertex();
 
-        //Distance
-        //int cost(int _id);
+        //Distance mise en place
+        void cost(int _id,int dist);
 };
 
 #endif // VERTEX_H

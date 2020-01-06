@@ -26,6 +26,8 @@ int main()
     Graph* B = new Graph();
     B->genererMatrice();
     B->afficher();
+    B->genererDistVertex();
+
 
     BFS(B,0);
 
@@ -41,12 +43,9 @@ int main()
         cout<<h.table[i]<<" | ";
     }*/
 
-    Floyd_Warshall(B);
-
     //TopologicalSort(B);
 
-    cout << "Strongly Related : \n";
-    Strongly_Related(B);
+    //Strongly_Related(B);
     return 0;
 }
 

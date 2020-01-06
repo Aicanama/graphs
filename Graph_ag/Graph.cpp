@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include "Vertex.h"
+#include "Floyd_Warshall.h"
 
 #include <vector>
 #include <time.h>
@@ -57,58 +58,34 @@ void Graph::genererMatrice(){
 
 }
 
-/**void Graph::genererDistVertex(){
-    int dist[G->nb_vertex][G->nb_vertex];
+void Graph::genererDistVertex(){
+    int k=0;
 
-    for (int i =0; i< G->nb_vertex; ++i){
-        for(int j= 0; j< G->nb_vertex; ++j){
-                dist[i][j]=INT_MAX; //int_max = infini
-        }
+    for (int i=0;i<nb_vertex;i++){
+    ListVertex[i]->distance = new int[nb_vertex];
     }
 
-    for (int i =0; i< G->nb_vertex; ++i){
-        dist[i][i]=0;
-    }
+  Floyd_Warshall(this);
 
-    for (int i =0; i< G->nb_vertex; ++i){
-        for(int j= 0; j< G->nb_vertex; ++j){
-                if(G->Adj[i][j]!=0){
-                    dist[i][j]=G->Adj[i][j]; //weigh of vertex i to j
-                }
-
-        }
-    }
-
-     for (int k =0; k< G->nb_vertex; ++k){
-        for (int i =0; i< G->nb_vertex; ++i){
-            for(int j= 0; j< G->nb_vertex; ++j){
-                if( dist[i][k]!=INT_MAX && dist[k][j]!=INT_MAX &&
-                   dist[i][j]>(dist[i][k]+dist[k][j]))
-                {
-                    dist[i][j] = dist[i][k]+dist[k][j];
-                }
-            }
-        }
-     }
-
-cout << "\n Floyd-Warshall for shortest paths between any couple of vertices: \n";
-
-    for (int i =0;i<G->nb_vertex;i++){
+  cout<<" \t";
+    for (int i =0;i<nb_vertex;i++)
         cout<<i<<"\t";
+    cout<<endl;
 
-        for (int j =0;j<G->nb_vertex;j++){
-             if(dist[i][j]==INT_MAX) cout <<"INF\t";
-            else
-            {
-                cout<<dist[i][j]<<"\t";
-            }
-        }
+    for (int i =0;i<nb_vertex;i++){
+        cout<<i<<"\t";
+        for (int j =0;j<nb_vertex;j++)
+                if(ListVertex[i]->distance[j]==INT_MAX) cout <<"INF\t";
+                else cout<<ListVertex[i]->distance[j]<<"\t";
         cout<<endl;
     }
     cout<<endl;
 
+
+
+
+
 }
-*/
 
 
 void Graph::afficher(){

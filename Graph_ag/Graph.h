@@ -21,6 +21,7 @@ class Graph
         std::vector<Edge*> ListEdge;      //E
 
         int** Adj;
+        int** VertexVoisin;
 
     public:
 
@@ -31,8 +32,9 @@ class Graph
 
         /// fonctions
         void afficher();
+        void afficherVertexVoisin();
         void genererMatrice();
-        //void genererDistVertex();
+        void genererDistVertex();
 
         ///fichier lecture
         int file2graph(std::ifstream& FICH);
