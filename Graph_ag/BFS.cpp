@@ -6,7 +6,7 @@ using namespace std;
 
 
 //id : vertex de départ
-vector<int> BFS(Graph* G, int ID) {
+void BFS(Graph* G, int ID) {
 
                 //rendu pour ordre voisin
                 vector<int> v;
@@ -49,5 +49,4 @@ vector<int> BFS(Graph* G, int ID) {
             }
         }
     }
-    return v;
 }

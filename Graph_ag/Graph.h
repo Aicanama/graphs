@@ -32,6 +32,7 @@ class Graph
         /// fonctions
         void afficher();
         void genererMatrice();
+        //void genererDistVertex();
 
         ///fichier lecture
         int file2graph(std::ifstream& FICH);

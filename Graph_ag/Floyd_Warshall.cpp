@@ -1,15 +1,16 @@
 #include "Floyd_Warshall.h"
+#include "Graph.h"
+
 #include <iostream>
 
 using namespace std;
 
 void Floyd_Warshall(Graph* G){
-    int dist[G->nb_vertex][G->nb_vertex]/*, pred[G->nb_vertex][G->nb_vertex]*/;
+    int dist[G->nb_vertex][G->nb_vertex];
 
     for (int i =0; i< G->nb_vertex; ++i){
         for(int j= 0; j< G->nb_vertex; ++j){
                 dist[i][j]=INT_MAX; //int_max = infini
-                //pred[i][j]=INT_MAX;
         }
     }
 
@@ -21,7 +22,6 @@ void Floyd_Warshall(Graph* G){
         for(int j= 0; j< G->nb_vertex; ++j){
                 if(G->Adj[i][j]!=0){
                     dist[i][j]=G->Adj[i][j]; //weigh of vertex i to j
-                    //pred[i][j]=i;
                 }
 
         }
@@ -46,7 +46,11 @@ cout << "\n Floyd-Warshall for shortest paths between any couple of vertices: \n
 
         for (int j =0;j<G->nb_vertex;j++){
              if(dist[i][j]==INT_MAX) cout <<"INF\t";
-                else cout<<dist[i][j]<<"\t";
+            else
+            {
+                //G->ListVertex[i]->dist[j] = dist[i][j];
+                cout<<dist[i][j]<<"\t";
+            }
         }
         cout<<endl;
     }

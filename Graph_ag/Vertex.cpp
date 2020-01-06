@@ -6,5 +6,8 @@ Vertex::Vertex(int _id)
        this->id = _id;
 
 }
-Vertex::~Vertex(){}
 
+
+Vertex::~Vertex(){
+    //delete[] distance;
+}

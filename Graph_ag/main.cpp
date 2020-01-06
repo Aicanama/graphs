@@ -11,6 +11,9 @@
 #include "DFS.h"
 #include "MinHeap.h"
 #include "Floyd_Warshall.h"
+#include "TopologicalSort.h"
+#include "Strongly_Related.h"
+
 
 using namespace std;
 
@@ -24,8 +27,7 @@ int main()
     B->genererMatrice();
     B->afficher();
 
-    vector<int> v;
-    v = BFS(B,0);
+    BFS(B,0);
 
     DFS(B,1);
 
@@ -33,15 +35,18 @@ int main()
 
     /**MinHeap h(B); //construct add(i)--> avoir voisin
 
-
-cout<<"\n MinHeap  " ;
-for (int i =1;i<=h.nb_element;i++)
+    cout<<"\n MinHeap  " ;
+    for (int i =1;i<=h.nb_element;i++)
     {
         cout<<h.table[i]<<" | ";
     }*/
 
     Floyd_Warshall(B);
 
+    //TopologicalSort(B);
+
+    cout << "Strongly Related : \n";
+    Strongly_Related(B);
     return 0;
 }
 

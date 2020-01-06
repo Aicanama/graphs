@@ -21,7 +21,7 @@ MinHeap::~MinHeap(){
 MinHeap& MinHeap::createMinHeap(Graph* G)//en fait minheap possède 2 argument (src,dist)
 {
 
-    vector<int> v = BFS(G,0); //ordre des vertex
+    vector<int> v;// = BFS(G,0); //ordre des vertex
     G->setAllUnvisited();
     int n= G->nb_vertex;
 
@@ -89,7 +89,7 @@ void MinHeap::OrganizeHeap(int i)
 }
 
 
-///-------Add/Deleter ----------------------------
+///-------Add/Delete----------------------------
 
 void MinHeap::AddElement(int k)
 {

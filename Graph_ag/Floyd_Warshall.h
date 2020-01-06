@@ -3,7 +3,7 @@
 
 #include "Graph.h"
 
-void Floyd_Warshall(Graph*);
+void Floyd_Warshall(Graph* G);
 
 
 #endif // FLOYD_WARSHALL_H

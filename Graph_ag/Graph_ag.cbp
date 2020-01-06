@@ -48,6 +48,10 @@
 		<Unit filename="Graph.h" />
 		<Unit filename="MinHeap.cpp" />
 		<Unit filename="MinHeap.h" />
+		<Unit filename="Strongly_Related.cpp" />
+		<Unit filename="Strongly_Related.h" />
+		<Unit filename="TopologicalSort.cpp" />
+		<Unit filename="TopologicalSort.h" />
 		<Unit filename="Vertex.cpp" />
 		<Unit filename="Vertex.h" />
 		<Unit filename="main.cpp" />

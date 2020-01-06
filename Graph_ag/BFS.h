@@ -4,6 +4,6 @@
 #include "Graph.h"
 #include "vector"
 
-std::vector<int> BFS(Graph*, int);
+void BFS(Graph*, int);
 
 #endif // BFS_H
