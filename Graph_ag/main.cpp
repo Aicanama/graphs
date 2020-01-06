@@ -31,7 +31,7 @@ int main()
 
     BFS(B,0);
 
-    DFS(B,1);
+    DFS(B,0);
 
     Dijkstra(B,0);//si affiche INF = infini
 

@@ -32,13 +32,12 @@ vector<int>  BFS(Graph* G, int ID) {
 
         q.pop_front();
 
-        //en fonction du nombre d'edge !!!!!! REVOIR COMMENT OBTENIR CA
          int currVertex;
 
         for(int i = 0; i< G->nb_vertex; ++i)
         {   int k =0;
 
-            while( G->ListVertex[ID]->distance[i]!=0 && k<1){
+            while(G->Adj[ID][i]!=0&& k<1){
                 k++;
                 currVertex = i;
                     if (!G->isVisited(currVertex)) {
