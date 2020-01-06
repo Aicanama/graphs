@@ -5,15 +5,22 @@
 
 using namespace std;
 
-Graph* getTranspose(Graph* G)
-{
-    Graph* g =  new Graph(G->nb_vertex);
+Graph getTranspose(Graph* G)
+{    Graph g = Graph(1);
 
-    for (int i =0;i<G->nb_vertex;i++)
-        for (int j =0;j<G->nb_vertex;j++)
-            g->Adj[j][i]=G->Adj[i][j];
-    cout << "gtranspoe fnct : g->nb_vertex  "<< g->nb_vertex <<  " listVertex[2] = " << g->ListVertex[2]<<endl;
-    return g;
+     g.nb_vertex = G->nb_vertex;
+     g.nb_edge = G->nb_edge;
+
+        g.ListVertex = G->ListVertex;
+        g.ListEdge = G->ListEdge;
+
+        g.genererMatrice();
+
+    for (int i =0;i<g.nb_vertex;i++)
+        for (int j =0;j<g.nb_vertex;j++)
+             g.Adj[j][i]= G->Adj[i][j];
+
+        return g;
 }
 
 void fillOrder(int v, stack<int> &Stack, Graph* G)
@@ -24,20 +31,16 @@ void fillOrder(int v, stack<int> &Stack, Graph* G)
     // Recur for all the vertices adjacent to this vertex
      for(int i=0; i<G->nb_vertex; ++i)
     {
-        cout << "bouclde de "<<v<<endl;
          if(G->Adj[v][i]!=0){
             int currentVertex = i;
-            cout << "curr vertex voisin de "<< v<<" : " << currentVertex<<endl;
             if(!G->isVisited(currentVertex))
             fillOrder(currentVertex, Stack, G);
         }
 
      }
-     cout << "fin boucle " <<endl<<endl;
     // All vertices reachable from v are processed by now, push v
     Stack.push(v);
 
-    cout << "Stack top : " << Stack.top() <<endl;;
 }
 
 void Strongly_Related(Graph* G){
@@ -53,11 +56,14 @@ void Strongly_Related(Graph* G){
             fillOrder(i, Stack, G);
 
     // Create a reversed graph
-    Graph* GTrans = getTranspose(G);
+   Graph GTrans = getTranspose(G);
+   GTrans.afficher();
+
 
     // Mark all the vertices as not visited (For second DFS)
-    GTrans->setAllUnvisited();
+   GTrans.setAllUnvisited();
 
+   cout << "Strongly_Related : strongly connected component on the same line\n";
     // Now process all vertices in order defined by Stack
     while (Stack.empty() == false)
     {
@@ -66,10 +72,11 @@ void Strongly_Related(Graph* G){
         Stack.pop();
 
         // Print Strongly connected component of the popped vertex
-        if (!GTrans->isVisited(v))
+       if (!GTrans.isVisited(v))
         {
-            dfs_util(GTrans,v);
+            dfs_util2(GTrans,v);
             cout << endl;
         }
     }
+
 }

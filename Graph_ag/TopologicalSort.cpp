@@ -41,4 +41,5 @@ void TopologicalSort(Graph* G){
         cout << Stack.top() << " ";
         Stack.pop();
     }
+    cout << endl;
 }

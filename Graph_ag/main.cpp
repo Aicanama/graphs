@@ -22,6 +22,7 @@ int main()
     /*Graph* G = new Graph(3);
     G->genererMatrice();
     G->afficher();*/
+
     cout << "test file"<< endl;
     Graph* B = new Graph();
     B->genererMatrice();
@@ -45,7 +46,7 @@ int main()
 
     TopologicalSort(B);
 
-    //Strongly_Related(B);
+    Strongly_Related(B);
 
     return 0;
 }

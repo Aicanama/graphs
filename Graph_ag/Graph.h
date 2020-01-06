@@ -28,6 +28,7 @@ class Graph
         /// Construtor
         Graph(int nb_vertex);
         Graph();
+        Graph(const Graph& other);
         virtual ~Graph();
 
         /// fonctions

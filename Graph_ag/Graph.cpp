@@ -82,9 +82,23 @@ void Graph::genererDistVertex(){
     }
     cout<<endl;
 
+}
 
+Graph::Graph(const Graph& other){
+    if (this != &other)
+            {
+                this->nb_vertex = other.nb_vertex;
+                this->nb_edge = other.nb_edge;
 
+                this->ListVertex = other.ListVertex;
+                this->ListEdge = other.ListEdge;
 
+                 for (int i =0;i<nb_vertex;i++)
+                    delete[] Adj[i];
+                 delete[] Adj;
+
+                 genererMatrice();
+            }
 
 }
 

@@ -57,9 +57,15 @@ void Dijkstra(Graph* G,int ID){
     }
 
     cout<<"\n\n Dijkstra : \nVertex \t\t Distance from src  \tPredecessor\n";
+    cout <<"if INF apparait = 0 lien avec la source\n";
     for (int i = 0; i < G->nb_vertex; i++){
-             if (pred[i] == INT_MAX)
+             if (pred[i] == INT_MAX || dist[i] == INT_MAX)
+             {
+                 if(pred[i] == INT_MAX && dist[i] != INT_MAX )
                  cout<<i<< " \t\t " << dist[i] << "\t\t\t INF"<<endl;
+                 else
+                cout<<i<< " \t\t INF \t\t\t  INF"<<endl;
+             }
             else
             cout<<i<< " \t\t " << dist[i] << "\t\t\t "<<pred[i]  <<endl;
     }
