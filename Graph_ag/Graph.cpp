@@ -80,7 +80,7 @@ void Graph::genererDistVertex(){
    }
 
 
-    cout<<"Vertex\t Liste des id des vertex voisin"<<endl;
+    cout<<"Vertex\t neighbour list with id of neighbours"<<endl;
 
     for (int i =0;i<nb_vertex;i++){
         cout<<i<<"   \t";
