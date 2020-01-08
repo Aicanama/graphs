@@ -314,7 +314,6 @@ int Graph::graph_list(ifstream& File){
             string line;
             getline(File, line);
             int taille = line.size();
-            cout << endl << "taille de la ligne : " << taille << endl << endl;
 
             ///on se replace au début de la ligne
             File.seekg(0,ios::beg);
@@ -323,8 +322,6 @@ int Graph::graph_list(ifstream& File){
             do {
                 string morceau;
                 File >> morceau;
-                cout << "morceau : " << morceau << endl;
-
                 int p = morceau.size();
 
                 if(counter%2 == 0) {
@@ -338,15 +335,12 @@ int Graph::graph_list(ifstream& File){
                 }
 
                 compteur = compteur + p + 1;
-                cout << "compteur : " << compteur << endl << endl;
                 counter++;
                 id++;
             }
             while(compteur <= taille);
 
             compteur = 0;
-            cout << "On passe a la ligne suivante!" << endl << endl;
-            //cout << "Le vertex a " << (compteur-1)/2 << " voisin(s)" << endl;
         }
         return 1;
     }
