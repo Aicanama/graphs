@@ -253,7 +253,7 @@
 	"Graph.h"
 	"vector"
 
-1578407371 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.h
+1578508995 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.h
 	<vector>
 	"time.h"
 	"Vertex.h"
@@ -297,7 +297,7 @@
 1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\floyd_warshall.h
 	"Graph.h"
 
-1578505382 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.cpp
+1578508729 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.cpp
 	"Graph.h"
 	"Vertex.h"
 	"Floyd_Warshall.h"
@@ -311,7 +311,7 @@
 	<fstream>
 	<list>
 
-1578505982 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
+1578509298 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -328,11 +328,12 @@
 	"TopologicalSort.h"
 	"Strongly_Related.h"
 	"Prim.h"
+	"kruskal.h"
 
-1578403329 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.h
+1578509023 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.h
 	"Graph.h"
 	"BFS.h"
-	"BFS.h"
+	"Edge.h"
 
 1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\topologicalsort.h
 	"Graph.h"
@@ -343,10 +344,11 @@
 	"DFS.h"
 	"stack"
 
-1578403405 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.cpp
+1578508868 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.cpp
 	"MinHeap.h"
 	"Graph.h"
 	"BFS.h"
+	<vector>
 	"Edge.h"
 	<iostream>
 
@@ -365,22 +367,24 @@
 	"Vertex.h"
 	<iostream>
 
-1578402753 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.cpp
+1578514168 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.cpp
 	"DisjointSet.h"
 
-1578402753 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.h
+1578508920 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.h
 
-1578405767 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.cpp
-	"kruskal.h"
+1578510582 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.cpp
 	"Graph.h"
 	"MinHeap.h"
+	"kruskal.h"
 	"DisjointSet.h"
 	<iostream>
 
-1578405601 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.h
+1578508409 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.h
+	<vector>
+	"Edge.h"
 	"Graph.h"
 
-1578507135 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\prim.cpp
+1578509362 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\prim.cpp
 	"Prim.h"
 	<iostream>
 

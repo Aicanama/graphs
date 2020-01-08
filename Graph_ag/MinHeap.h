@@ -3,8 +3,7 @@
 
 #include "Graph.h"
 #include "BFS.h"
-
-#include "BFS.h"
+#include "Edge.h"
 
 class MinHeap
 {
@@ -17,7 +16,7 @@ class MinHeap
         //constructors
         MinHeap(Graph*);
         MinHeap(std::vector<Edge*>, int, int);
-        virtual ~MinHeap() {delete[]table;}
+        virtual ~MinHeap();
 
 
         ///-----Binary tree

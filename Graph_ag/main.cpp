@@ -15,6 +15,7 @@
 #include "TopologicalSort.h"
 #include "Strongly_Related.h"
 #include "Prim.h"
+#include "kruskal.h"
 
 
 using namespace std;
@@ -32,10 +33,9 @@ int main()
     B->genererDistVertex();
 
 
-    cout<<"test\n";
     Floyd_Warshall(B);
-    //BFS(B,0);
 
+    //BFS(B,0);
     //affiche BFS too
     if(!B->graph_connexe())cout<<"\n le graphe n'est pas connex" <<endl;
     else cout<<"\n le graph est connex"<<endl;
@@ -50,6 +50,8 @@ int main()
     Strongly_Related(B);
 
     Prim(B);
+
+    kruskal(B);
 
     return 0;
 }

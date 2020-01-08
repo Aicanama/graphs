@@ -4,21 +4,35 @@ using namespace std;
 
 DisjointSet::DisjointSet(int n)
 {
-    rnk = new int[n];
-    parent = new int[n];
     this->n = n;
+    rnk = new int[n+1];
+    parent = new int[n+1];
     makeSet();
+
+    // Initially, all vertices are in
+        // different sets and have rank 0.
+        for (int i = 0; i <= n; i++)
+        {
+            rnk[i] = 0;
+
+            //every element is parent of itself
+            parent[i] = i;
+        }
 }
 
 //Destructor
-DisjointSet::~DisjointSet(){}
+DisjointSet::~DisjointSet(){
+delete parent;
+delete rnk;
+}
 
-void DisjointSet::makeSet()
+/*void DisjointSet::makeSet()
 {
     for(int i = 0; i < n; ++i) {
         parent[i] = i;
     }
-}
+}*/
+
 int DisjointSet::Find(int x)
     {
         // Finds the representative of the set
@@ -38,11 +52,20 @@ int DisjointSet::Find(int x)
     }
 
 
-void DisjointSet::Union(int m, int n) { // perform Union of two subsets m and n
-      int x = Find(m);
-      int y = Find(n);
-      parent[x] = y;
-}
+void DisjointSet::Union(int x, int y)
+    {
+        x = Find(x), y = Find(y);
+
+        /* Make tree with smaller height
+           a subtree of the other tree  */
+        if (rnk[x] > rnk[y])
+            parent[y] = x;
+        else // If rnk[x] <= rnk[y]
+            parent[x] = y;
+
+        if (rnk[x] == rnk[y])
+            rnk[y]++;
+    }
 
 bool DisjointSet::diff(int a, int b) {
     if(a != b) {

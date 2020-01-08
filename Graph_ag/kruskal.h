@@ -1,8 +1,16 @@
-#ifndef KRUSKAL_H
-#define KRUSKAL_H
-
+#include <vector>
+#include "Edge.h"
 #include "Graph.h"
 
-void kruskal(Graph&);
+#ifndef KRUSKAL_H_INCLUDED
+#define KRUSKAL_H_INCLUDED
 
-#endif // KRUSKAL_H
+int kruskal(Graph*);
+
+std::vector<Edge*> sortingCost(std::vector<Edge*>);
+
+void Union(Edge*);
+
+Vertex* Find(Vertex*);
+
+#endif // KRUSKAL_H_INCLUDED

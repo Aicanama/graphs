@@ -38,6 +38,9 @@ class Graph
 
         void sortEdge();
         int verifV(int, Vertex*&);
+        Edge* verifEdge_o(Vertex*,Vertex*);
+        //Edge* verifEdge_n(Vertex*,Vertex*);
+
 
 
         ///fichier lecture

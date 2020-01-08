@@ -280,6 +280,16 @@ void Graph::sortEdge() {
 }
 
 
+///Fonction qui vérifie que deux vertices sont bien reliés par un edge
+Edge* Graph::verifEdge_o(Vertex* source, Vertex* destination) {
+	for(int i=0; i<ListEdge.size(); ++i) {
+		if((ListEdge[i]->source == source) && (ListEdge[i]->destination == destination)) {
+			return ListEdge[i];
+		}
+	}
+	return NULL;
+}
+
 ///Fonction qui vérifie qu'un vertex est bien dans la liste
 int Graph::verifV(int ID, Vertex*& v){
     for(int i=0; i<nb_vertex; ++i) {
