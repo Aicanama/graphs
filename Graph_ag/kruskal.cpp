@@ -117,36 +117,3 @@ vector<Edge*> sortingCost(vector<Edge*> _ListEdge) {
 	}
 	return listEdge_sorted;
 }
-
-
-///Fonction qui fait l'union en fonction du rank
-/*void Union(Edge* e)
-{
-	Vertex* x = e->source->parent;
-	Vertex* y = e->destination->parent;
-
-	x = Find(x);
-    y = Find(y);
-
-	// Make tree with smaller height a subtree of the other tree
-	if (x->rnk > y->rnk)
-		y->parent = x;
-	else {
-        // If rnk[x] <= rnk[y]
-		x->parent = y;
-	}
-	if (x->rnk == y->rnk)
-		++(y->rnk);
-}
-
-
-
-///Fonction qui cherche le parent du vertex
-Vertex* Find(Vertex* _u)
-{
-	if (_u != _u->parent) {
-		_u->parent = Find(_u->);
-	}
-
-	return _u->parent;
-}*/
