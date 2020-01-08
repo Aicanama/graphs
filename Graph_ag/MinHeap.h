@@ -4,28 +4,39 @@
 #include "Graph.h"
 #include "BFS.h"
 
+#include "BFS.h"
+
 class MinHeap
 {
      public:
          //member
-        int *table; // pointer to array of elements in heap vertex  (dist = value, vertex = i)
+        Edge* table; // pointer to array of elements in heap vertex  (dist = value, vertex = i)    <- revoir ce com !
         int capacity; // maximum possible size of min heap
         int nb_element; // Current number of elements in min heap
 
-    public:
         //constructors
         MinHeap(Graph*);
-        virtual ~MinHeap();
+        MinHeap(std::vector<Edge*>, int, int);
+        virtual ~MinHeap() {delete[]table;}
 
-        MinHeap& createMinHeap(Graph*);
 
-          ///-----Binary tree
+        ///-----Binary tree
         int parent(int);
         int left(int);
         int right(int);
         bool IsLeaf(int);
+        void Insert(Edge&);
 
-        bool IsEmpty();
+        void deleteMin();
+        int getMin();
+        Edge& TakeMin();
+
+        bool isEmpty();
+        bool isFull();
+        void travDown(int);
+        void TravUp(int);
+
+
 
         ///----------Exchange
 
@@ -38,11 +49,6 @@ class MinHeap
 
         ///--------Insert/delete
         void AddElement(int);
-        int TakeMin();
-
-
-
-
 };
 
 #endif // MINHEAP_H

@@ -36,7 +36,7 @@ void DFS(Graph* G,int ID) {
 }
 
 ///Fonction qui visite le vertex
-void dfs_util2(Graph& G, int ID) {
+void dfs_util_strong(Graph& G, int ID) {
 
     G.visited(ID);
     cout << " " << ID << " ";
@@ -47,7 +47,7 @@ void dfs_util2(Graph& G, int ID) {
             if(G.Adj[ID][i]!=0){
              currVertex = i;
                 if(!G.isVisited(currVertex)) {
-                    dfs_util2(G,currVertex);
+                    dfs_util_strong(G,currVertex);
                 }
             }
     }

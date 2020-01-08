@@ -14,7 +14,9 @@ class Edge
         Vertex* destination;
 
         //constructor
+        Edge();
         Edge(int, int, Vertex*, Vertex*);
+        Edge& operator=(const Edge&);
         ~Edge();
 };
 

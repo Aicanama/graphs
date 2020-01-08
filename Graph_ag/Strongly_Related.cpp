@@ -74,7 +74,7 @@ void Strongly_Related(Graph* G){
         // Print Strongly connected component of the popped vertex
        if (!GTrans.isVisited(v))
         {
-            dfs_util2(GTrans,v);
+            dfs_util_strong(GTrans,v);
             cout << endl;
         }
     }

@@ -244,16 +244,16 @@
 	"DFS.h"
 	"stack"
 
-1578325901 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\bfs.cpp
+1578410576 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\bfs.cpp
 	"BFS.h"
 	"Graph.h"
 	<iostream>
 
-1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\bfs.h
+1578410503 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\bfs.h
 	"Graph.h"
 	"vector"
 
-1578336942 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.h
+1578407371 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.h
 	<vector>
 	"time.h"
 	"Vertex.h"
@@ -265,18 +265,18 @@
 
 1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\vertex.h
 
-1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\edge.h
+1578403261 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\edge.h
 	"Vertex.h"
 
-1578337671 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\dfs.cpp
+1578337941 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\dfs.cpp
 	"DFS.h"
 	"Graph.h"
 	<iostream>
 
-1578337671 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\dfs.h
+1578337921 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\dfs.h
 	"Graph.h"
 
-1578327232 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\dijkstra.cpp
+1578499277 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\dijkstra.cpp
 	"Dijkstra.h"
 	"Graph.h"
 	<iostream>
@@ -284,7 +284,7 @@
 1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\dijkstra.h
 	"Graph.h"
 
-1578322854 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\edge.cpp
+1578403498 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\edge.cpp
 	"Edge.h"
 	"Vertex.h"
 
@@ -296,7 +296,7 @@
 1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\floyd_warshall.h
 	"Graph.h"
 
-1578337438 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.cpp
+1578410524 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.cpp
 	"Graph.h"
 	"Vertex.h"
 	"Floyd_Warshall.h"
@@ -310,11 +310,12 @@
 	<fstream>
 	<list>
 
-1578332996 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
+1578498917 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
 	<fstream>
+	<vector>
 	"Edge.h"
 	"Vertex.h"
 	"Graph.h"
@@ -326,8 +327,9 @@
 	"TopologicalSort.h"
 	"Strongly_Related.h"
 
-1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.h
+1578403329 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.h
 	"Graph.h"
+	"BFS.h"
 	"BFS.h"
 
 1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\topologicalsort.h
@@ -339,13 +341,14 @@
 	"DFS.h"
 	"stack"
 
-1578322854 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.cpp
+1578403405 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.cpp
 	"MinHeap.h"
 	"Graph.h"
 	"BFS.h"
+	"Edge.h"
 	<iostream>
 
-1578337739 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\strongly_related.cpp
+1578337934 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\strongly_related.cpp
 	"Strongly_Related.h"
 	"DFS.h"
 	<iostream>
@@ -359,4 +362,19 @@
 1578322854 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\vertex.cpp
 	"Vertex.h"
 	<iostream>
+
+1578402753 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.cpp
+	"DisjointSet.h"
+
+1578402753 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.h
+
+1578405767 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.cpp
+	"kruskal.h"
+	"Graph.h"
+	"MinHeap.h"
+	"DisjointSet.h"
+	<iostream>
+
+1578405601 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.h
+	"Graph.h"
 

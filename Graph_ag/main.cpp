@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <vector>
 
 #include "Edge.h"
 #include "Vertex.h"
@@ -32,17 +33,12 @@ int main()
 
     BFS(B,0);
 
+    cout<<"\n est ce que graphe connex ? : ";//affiche BFS too
+
+
     DFS(B,0);
 
     Dijkstra(B,0);//si affiche INF = infini
-
-    /**MinHeap h(B); //construct add(i)--> avoir voisin
-
-    cout<<"\n MinHeap  " ;
-    for (int i =1;i<=h.nb_element;i++)
-    {
-        cout<<h.table[i]<<" | ";
-    }*/
 
     TopologicalSort(B);
 

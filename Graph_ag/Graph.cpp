@@ -60,7 +60,6 @@ void Graph::genererMatrice(){
 }
 
 void Graph::genererDistVertex(){
-    int k=0;
 
     for (int i=0;i<nb_vertex;i++){
     ListVertex[i]->distance = new int[nb_vertex];
@@ -387,9 +386,9 @@ void Graph::visited(int ID) {
 
 
 ///Fonction qui traverse le graph et compte le nb de vertices visités
-int Graph::pathes_prefixe(Graph* G){
+int Graph::pathes_prefixe(){
     vector<int> v;
-    v = BFS(G,0);
+    v = BFS(this,0);
 
     int nbVisited = v.size();
     return nbVisited;
@@ -397,9 +396,9 @@ int Graph::pathes_prefixe(Graph* G){
 
 
 ///Fonction qui vérifie la "relatedness" du graph
-bool Graph::graph_connexe(Graph* G){
-    int value = pathes_prefixe(G);
-    if(G->nb_vertex == value) return 1;
+bool Graph::graph_connexe(){
+    int value = pathes_prefixe();
+    if(nb_vertex == value) return 1;
     else return 0;
 }
 

@@ -53,8 +53,8 @@ class Graph
         void visited(int);
 
         ///Relatedness
-        int pathes_prefixe(Graph*);
-        bool graph_connexe(Graph*);
+        int pathes_prefixe();
+        bool graph_connexe();
 };
 
 #endif // GRAPH_H

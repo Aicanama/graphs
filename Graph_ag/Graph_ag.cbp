@@ -40,6 +40,8 @@
 		<Unit filename="DFS.h" />
 		<Unit filename="Dijkstra.cpp" />
 		<Unit filename="Dijkstra.h" />
+		<Unit filename="DisjointSet.cpp" />
+		<Unit filename="DisjointSet.h" />
 		<Unit filename="Edge.cpp" />
 		<Unit filename="Edge.h" />
 		<Unit filename="Floyd_Warshall.cpp" />
@@ -54,6 +56,8 @@
 		<Unit filename="TopologicalSort.h" />
 		<Unit filename="Vertex.cpp" />
 		<Unit filename="Vertex.h" />
+		<Unit filename="kruskal.cpp" />
+		<Unit filename="kruskal.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<envvars />
