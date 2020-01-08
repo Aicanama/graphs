@@ -1,6 +1,7 @@
 #ifndef VERTEX_H
 #define VERTEX_H
 
+#include <vector>
 
 class Vertex
 {
@@ -8,14 +9,15 @@ class Vertex
         //members
         int id;
         int visit;
-        int *distance; // distance[i] will hold the cost of the vertex with all the other vertex
+        std::vector<int> ListNeighbour; // ListNeighbour[i] will hold the id of neighbour
 
         //attribute
         Vertex(int);
         virtual ~Vertex();
 
-        //Distance mise en place
-        void cost(int _id,int dist);
+        //mettre la liste de voisin
+        /*void setNeighbour(int);
+        Vertex& getNeighbour(int)*/
 };
 
 #endif // VERTEX_H

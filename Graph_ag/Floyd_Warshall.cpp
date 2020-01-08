@@ -39,13 +39,20 @@ void Floyd_Warshall(Graph* G){
         }
      }
 
-cout << "\n Floyd-Warshall for shortest paths between any couple of vertices: (used for neighbour in Graph) \n";
-    for (int i =0;i<G->nb_vertex;i++){
-        for (int j =0;j<G->nb_vertex;j++){
+cout << "\n Floyd-Warshall for shortest paths between any couple of vertices:\n";
+ cout<<" \t";
+    for (int i =0;i<G->nb_vertex;i++)
+        cout<<i<<"\t";
+    cout<<endl;
 
-                G->ListVertex[i]->cost(j,dist[i][j]);
-        }
+    for (int i =0;i<G->nb_vertex;i++){
+        cout<<i<<"\t";
+        for (int j =0;j<G->nb_vertex;j++)
+                if(dist[i][j]==INT_MAX) cout <<"INF\t";
+                else cout<<dist[i][j]<<"\t";
+        cout<<endl;
     }
+    cout<<endl;
 
 }
 

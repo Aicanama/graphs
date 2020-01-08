@@ -10,9 +10,9 @@ Vertex::Vertex(int _id)
 
 
 Vertex::~Vertex(){
-    delete[] distance;
+    //delete[] distance;
 }
-
+/*
 void Vertex::cost(int _id,int dist){
     distance[_id] = dist;
-}
+}*/

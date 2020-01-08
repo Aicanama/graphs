@@ -57,7 +57,6 @@ void Strongly_Related(Graph* G){
 
     // Create a reversed graph
    Graph GTrans = getTranspose(G);
-   GTrans.afficher();
 
 
     // Mark all the vertices as not visited (For second DFS)
@@ -78,5 +77,6 @@ void Strongly_Related(Graph* G){
             cout << endl;
         }
     }
+    cout <<endl;
 
 }

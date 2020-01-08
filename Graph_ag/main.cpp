@@ -30,10 +30,13 @@ int main()
     B->afficher();
     B->genererDistVertex();
 
+    cout<<"test\n";
+    Floyd_Warshall(B);
+    //BFS(B,0);
 
-    BFS(B,0);
-
-    cout<<"\n est ce que graphe connex ? : ";//affiche BFS too
+    //affiche BFS too
+    if(!B->graph_connexe())cout<<"\n le graphe n'est pas connex" <<endl;
+    else cout<<"\n le graph est connex"<<endl;
 
 
     DFS(B,0);

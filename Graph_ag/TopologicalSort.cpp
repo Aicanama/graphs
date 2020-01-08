@@ -15,7 +15,6 @@ void TopologicalSortUtil(int ID, Graph* G, stack<int>& Stack) {
             if(G->Adj[ID][i]!=0){
                 if(!G->isVisited(i)) TopologicalSortUtil(i, G, Stack);
             }
-
         }
         Stack.push(ID);
     }
@@ -42,4 +41,5 @@ void TopologicalSort(Graph* G){
         Stack.pop();
     }
     cout << endl;
+    cout<<endl;
 }

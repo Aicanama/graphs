@@ -70,5 +70,7 @@ void Dijkstra(Graph* G,int ID){
             cout<<i<< " \t\t " << dist[i] << "\t\t\t "<<pred[i]  <<endl;
     }
 
+
+    cout <<endl;
 }
 

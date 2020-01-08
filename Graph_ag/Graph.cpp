@@ -61,22 +61,21 @@ void Graph::genererMatrice(){
 
 void Graph::genererDistVertex(){
 
-    for (int i=0;i<nb_vertex;i++){
-    ListVertex[i]->distance = new int[nb_vertex];
-    }
 
-  Floyd_Warshall(this);
+   for (int i =0;i<nb_vertex;i++){
+        for (int j =0;j<nb_vertex;j++){
+                if(Adj[i][j]!=0)
+                 ListVertex[i]->ListNeighbour.push_back(j);
+        }
+   }
 
-  cout<<" \t";
-    for (int i =0;i<nb_vertex;i++)
-        cout<<i<<"\t";
-    cout<<endl;
+
+    cout<<"Vertex\t Liste des id des vertex voisin"<<endl;
 
     for (int i =0;i<nb_vertex;i++){
-        cout<<i<<"\t";
-        for (int j =0;j<nb_vertex;j++)
-                if(ListVertex[i]->distance[j]==INT_MAX) cout <<"INF\t";
-                else cout<<ListVertex[i]->distance[j]<<"\t";
+        cout<<i<<"   \t";
+        for (int j =0;j<ListVertex[i]->ListNeighbour.size();j++)
+                cout<<ListVertex[i]->ListNeighbour[j]<<" ";
         cout<<endl;
     }
     cout<<endl;
