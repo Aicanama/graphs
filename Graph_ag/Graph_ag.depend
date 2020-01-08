@@ -311,7 +311,7 @@
 	<fstream>
 	<list>
 
-1578509298 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
+1578516120 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -367,17 +367,18 @@
 	"Vertex.h"
 	<iostream>
 
-1578514168 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.cpp
+1578515934 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.cpp
 	"DisjointSet.h"
 
-1578508920 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.h
+1578515934 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\disjointset.h
 
-1578510582 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.cpp
+1578516434 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.cpp
 	"Graph.h"
 	"MinHeap.h"
 	"kruskal.h"
-	"DisjointSet.h"
 	<iostream>
+	<vector>
+	<cstring>
 
 1578508409 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.h
 	<vector>

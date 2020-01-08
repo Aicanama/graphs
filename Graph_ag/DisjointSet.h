@@ -1,7 +1,7 @@
 #ifndef DISJOINTSET_H
 #define DISJOINTSET_H
 
-
+/*
 class DisjointSet
 {
     public:
@@ -23,5 +23,5 @@ class DisjointSet
 
     private:
 };
-
+*/
 #endif // DISJOINTSET_H

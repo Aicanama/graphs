@@ -1,14 +1,32 @@
 #include"Graph.h"
 #include "MinHeap.h"
 #include "kruskal.h"
-#include "DisjointSet.h"
 #include <iostream>
 
 #include <vector>;
 
+#include <cstring>;
+
 using namespace std;
 
+// A utility function to find the subset of an element i
+int find(int parent[], int i)
+{
+    if (parent[i] == -1)
+        return i;
+    return find(parent, parent[i]);
+}
 
+// A utility function to do union of two subsets
+void UnionHere(int parent[], int x, int y)
+{
+    int xset = find(parent, x);
+    int yset = find(parent, y);
+    if(xset != yset)
+    {
+        parent[xset] = yset;
+    }
+}
 
 int kruskal(Graph* G){
 
@@ -20,10 +38,12 @@ int kruskal(Graph* G){
 	vector<Edge*> liste = G->ListEdge;
 
 	// Create disjoint sets
-    DisjointSet ds(G->nb_vertex);
+    int *parent = new int[G->nb_vertex * sizeof(int)];
+    // Initialize all subsets as single element sets
+    memset(parent, -1, sizeof(int) * G->nb_vertex);
 
     liste = sortingCost(liste);
-    cout << "\n\nsorting ! ";
+
 
     vector<int> tabIdEdgeAvecCost;
 
@@ -33,22 +53,15 @@ int kruskal(Graph* G){
             }
     }
 
-    	for(int i = tabIdEdgeAvecCost[0]; i < tabIdEdgeAvecCost[tabIdEdgeAvecCost.size()-1]; ++i){
-	cout << "liste [i"<<i<<"]->source: "<< liste[i]->source->id
-        << "   liste [i"<<i<<"]->destinat: "<< liste[i]->destination->id
-        << " cost : "<<liste[i]->cost
-        <<endl;
-	}
-
-
 
 	for(int i = tabIdEdgeAvecCost[0]; i < tabIdEdgeAvecCost[tabIdEdgeAvecCost.size()-1]; ++i){
 
          int u = liste[i]->source->id;
         int v = liste[i]->destination->id;
 
-        int set_u = ds.Find(u);
-        int set_v = ds.Find(v);
+         int set_u = find(parent, u);
+       int set_v = find(parent, v);
+
        // Check if the selected edge is creating
         // a cycle or not (Cycle is created if u
         // and v belong to same set)
@@ -56,44 +69,17 @@ int kruskal(Graph* G){
         {
             // Current edge will be in the MST
             // so print it
-            cout << u << " - " << v << endl;
+            cout << u << " - " << v <<"\t "<<liste[i]->cost<< endl;
 
             // Update MST weight
             mstWeight += liste[i]->cost;
 
             // Merge two sets
-            ds.Union(set_u, set_v);
+            UnionHere(parent,set_u, set_v);
         }
     }
 
     return mstWeight;
-
-       /*
-
-        Vertex* u = liste[i]->source;
-		Vertex* v = liste[i]->destination;
-
-		Vertex* set_u = Find(u);
-		Vertex* set_v = Find(v);
-
-		//on vérifie qu'ils n'appartiennent pas au même set
-		if (set_u != set_v)
-		{
-            //on affiche l'edge car il sera dans le MST
-			cout << u->id << " - " << v->id << "\t" << liste[i]->cost << endl;
-
-			//on update le résultat
-			mstWeight = mstWeight + liste[i]->cost;
-
-			// Merge two sets
-			Union(liste[i]);
-		}
-	}
-
-	for (int i = 0; i < G->nb_vertex; ++i) {
-		G->ListVertex[i]->parent = G->ListVertex[i];
-	}
-	return mstWeight;*/
 
 }
 
@@ -134,7 +120,7 @@ vector<Edge*> sortingCost(vector<Edge*> _ListEdge) {
 
 
 ///Fonction qui fait l'union en fonction du rank
-void Union(Edge* e)
+/*void Union(Edge* e)
 {
 	Vertex* x = e->source->parent;
 	Vertex* y = e->destination->parent;
@@ -163,4 +149,4 @@ Vertex* Find(Vertex* _u)
 	}
 
 	return _u->parent;
-}
+}*/

@@ -51,7 +51,9 @@ int main()
 
     Prim(B);
 
-    kruskal(B);
+    int msw_t;
+    msw_t= kruskal(B);
+     cout << "\nWeight of MST is " << msw_t;
 
     return 0;
 }

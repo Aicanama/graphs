@@ -1,7 +1,7 @@
 #include "DisjointSet.h"
 
 using namespace std;
-
+/*
 DisjointSet::DisjointSet(int n)
 {
     this->n = n;
@@ -32,7 +32,7 @@ delete rnk;
         parent[i] = i;
     }
 }*/
-
+/*
 int DisjointSet::Find(int x)
     {
         // Finds the representative of the set
@@ -57,7 +57,7 @@ void DisjointSet::Union(int x, int y)
         x = Find(x), y = Find(y);
 
         /* Make tree with smaller height
-           a subtree of the other tree  */
+           a subtree of the other tree
         if (rnk[x] > rnk[y])
             parent[y] = x;
         else // If rnk[x] <= rnk[y]
@@ -84,3 +84,4 @@ bool DisjointSet::operator!=(DisjointSet a) {
         return false;
     }
 }
+*/

@@ -48,7 +48,6 @@
 		<Unit filename="Floyd_Warshall.h" />
 		<Unit filename="Graph.cpp" />
 		<Unit filename="Graph.h" />
-		<Unit filename="KrusKaal.cpp" />
 		<Unit filename="MinHeap.cpp" />
 		<Unit filename="MinHeap.h" />
 		<Unit filename="Prim.cpp" />
