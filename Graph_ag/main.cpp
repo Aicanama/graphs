@@ -22,6 +22,7 @@ using namespace std;
 
 int main()
 {
+    /*graph random : */
     /*Graph* G = new Graph(3);
     G->genererMatrice();
     G->afficher();*/
@@ -34,8 +35,8 @@ int main()
 
     Floyd_Warshall(B);
 
-    //BFS(B,0);
-    //affiche BFS too
+    //BFS(B,0); no neeed because of graph connex
+    //print BFS too
     if(!B->graph_connexe())cout<<"\n le graphe n'est pas connex" <<endl;
     else cout<<"\n le graph est connex"<<endl;
 

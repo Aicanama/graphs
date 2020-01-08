@@ -40,7 +40,6 @@
 		<Unit filename="DFS.h" />
 		<Unit filename="Dijkstra.cpp" />
 		<Unit filename="Dijkstra.h" />
-		<Unit filename="DisjointSet.cpp" />
 		<Unit filename="DisjointSet.h" />
 		<Unit filename="Edge.cpp" />
 		<Unit filename="Edge.h" />

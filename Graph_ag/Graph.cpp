@@ -264,45 +264,6 @@ int Graph::graph_o_matrix(ifstream& FICH){
 }
 
 
-///Fonction qui trie ordre croissant
-void Graph::sortEdge() {
-    int length = nb_edge;
-
-    for (int i = 0; i < length-1; ++i) {
-        for (int j = 0; j < length-1-i; ++j) {
-            if ((ListEdge[j]->cost) > (ListEdge[j+1]->cost)) {
-                Edge* p = ListEdge[j+1];
-                ListEdge[j+1] = ListEdge[j];
-                ListEdge[j] = p;
-            }
-        }
-    }
-}
-
-
-///Fonction qui vérifie que deux vertices sont bien reliés par un edge
-Edge* Graph::verifEdge_o(Vertex* source, Vertex* destination) {
-	for(int i=0; i<ListEdge.size(); ++i) {
-		if((ListEdge[i]->source == source) && (ListEdge[i]->destination == destination)) {
-			return ListEdge[i];
-		}
-	}
-	return NULL;
-}
-
-///Fonction qui vérifie qu'un vertex est bien dans la liste
-int Graph::verifV(int ID, Vertex*& v){
-    for(int i=0; i<nb_vertex; ++i) {
-        if (ListVertex[i]->id == ID) {
-            v = ListVertex[i];
-            return 1;
-        }
-    }
-    return 0;
-}
-
-
-
 ///Crée un graph à partir d'une liste d'adjacence
 int Graph::graph_list(ifstream& File){
 

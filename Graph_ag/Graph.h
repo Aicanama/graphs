@@ -36,12 +36,6 @@ class Graph
         void genererMatrice();
         void genererDistVertex();
 
-        void sortEdge();
-        int verifV(int, Vertex*&);
-        Edge* verifEdge_o(Vertex*,Vertex*);
-        //Edge* verifEdge_n(Vertex*,Vertex*);
-
-
 
         ///fichier lecture
         int file2graph(std::ifstream& FICH);
