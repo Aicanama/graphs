@@ -26,7 +26,6 @@ int main()
     G->genererMatrice();
     G->afficher();*/
 
-    cout << "test file"<< endl;
     Graph* B = new Graph();
     B->genererMatrice();
     B->afficher();

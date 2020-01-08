@@ -131,7 +131,7 @@ Graph::Graph(){
      this->nb_edge = 0;
     /// lecture fichier puis construction graph
     ifstream FICH("file.txt");
-    cout << "res de file2graph : " << this->file2graph(FICH) <<endl;
+    cout << "adjency matrix of Graph :" << this->file2graph(FICH) <<endl;
 
 }
 
