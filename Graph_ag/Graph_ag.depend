@@ -297,7 +297,7 @@
 1578322854 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\floyd_warshall.h
 	"Graph.h"
 
-1578503788 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.cpp
+1578505382 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\graph.cpp
 	"Graph.h"
 	"Vertex.h"
 	"Floyd_Warshall.h"
@@ -311,7 +311,7 @@
 	<fstream>
 	<list>
 
-1578502863 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
+1578505982 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -327,6 +327,7 @@
 	"Floyd_Warshall.h"
 	"TopologicalSort.h"
 	"Strongly_Related.h"
+	"Prim.h"
 
 1578403329 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\minheap.h
 	"Graph.h"
@@ -377,5 +378,12 @@
 	<iostream>
 
 1578405601 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\kruskal.h
+	"Graph.h"
+
+1578506203 source:c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\prim.cpp
+	"Prim.h"
+	<iostream>
+
+1578505888 c:\users\inesm\documents\utbm\ag44\graphs\graphs\graph_ag\prim.h
 	"Graph.h"
 

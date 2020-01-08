@@ -14,6 +14,7 @@
 #include "Floyd_Warshall.h"
 #include "TopologicalSort.h"
 #include "Strongly_Related.h"
+#include "Prim.h"
 
 
 using namespace std;
@@ -29,6 +30,7 @@ int main()
     B->genererMatrice();
     B->afficher();
     B->genererDistVertex();
+
 
     cout<<"test\n";
     Floyd_Warshall(B);
@@ -46,6 +48,8 @@ int main()
     TopologicalSort(B);
 
     Strongly_Related(B);
+
+    Prim(B);
 
     return 0;
 }
